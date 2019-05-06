@@ -68,6 +68,7 @@ article header h1 {
   grid-area: title;
 
   background: -webkit-linear-gradient(90deg, rgb(255, 0, 170), #000);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -91,6 +92,7 @@ article p {
   line-height: 1.2em;
 
   background: -webkit-linear-gradient(90deg, #222, #000);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
