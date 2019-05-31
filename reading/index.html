@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Reading List &bull; Marcus Whybrow</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="The books I want to read.">
+    <link rel="stylesheet" href="https://use.typekit.net/ydk2vlq.css">
+    <style>
+      html {
+        -webkit-text-size-adjust: 100%;
+      }
+
+      body::-webkit-scrollbar {
+        width: 15px;
+        height: 15px;
+      }
+      body::-webkit-scrollbar-thumb {
+        background-color: rgb(202, 202, 202);
+        
+      }
+      body::-webkit-scrollbar-thumb:vertical {
+        background-image: linear-gradient(180deg, rgb(202, 202, 202), rgb(173, 173, 173));
+        border: 10px solid white;
+        border-left: 0;
+      }
+      body::-webkit-scrollbar-thumb:horizontal {
+        background-image: linear-gradient(90deg, rgb(202, 202, 202), rgb(173, 173, 173));
+        border: 10px solid white;
+        border-top: 0;
+      }
+      body::-webkit-scrollbar-thumb:vertical:window-inactive {
+        background-image: linear-gradient(180deg, rgb(247, 247, 247), rgb(228, 228, 228));
+      }
+      body::-webkit-scrollbar-thumb:horizontal:window-inactive {
+        background-image: linear-gradient(90deg, rgb(247, 247, 247), rgb(228, 228, 228));
+      }
+
+
+      body {
+        padding: 0; margin: 0;
+
+        font-family: mrs-eaves-xl-serif, serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      article header {
+        margin: 10px 0 30px;
+        font-family: trajan-sans-pro, sans-serif;
+        font-style: normal;
+        text-align: center;
+
+        transition-property: margin;
+        transition-duration: 0.2s;
+
+        display: grid;
+        grid-template-rows: auto 10px auto;
+        grid-template-areas: "author"
+                            "-"
+                            "title";
+      }
+
+      article header h1 {
+        grid-column: 2/3;
+        
+        font-weight: 200;
+        text-transform: uppercase;
+        font-size: 200%;
+        line-height: 1.1em;
+        text-align: left;
+        margin: 0;
+
+        position: relative;
+        left: -3px;
+
+        transition: font-size 0.2s;
+
+        grid-area: title;
+      }
+
+      article header address {
+        grid-area: author;
+        font-style: normal;
+        font-size: 90%;
+        text-align: left;
+        color: rgb(41, 41, 41);
+      }
+
+      article header a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      article p {
+        font-size: 120%;
+      }
+
+      article p {
+        color: rgb(26, 26, 26);
+        line-height: 1.2em;
+
+        background: -webkit-linear-gradient(90deg, #222, #000);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      article h2 {
+        font-weight: normal;
+      }
+
+      article ul {
+        list-style: none;
+
+        padding: 0;
+      }
+
+      article ul li {
+        margin-bottom: 9px;
+      }
+
+      article ul li span {
+        font-size: 80%;
+      }
+
+      article #reading {
+        border-left: 1px solid black;
+        padding: 20px;
+      }
+      article #reading p {
+        margin: 0 0 5px;
+      }
+      article #reading ul {
+        display: inline-block;
+        /* font-weight: bold; */
+        margin: 0;
+      }
+
+      article ul#read li {
+        text-decoration: line-through;
+        color: #ddd;
+      }
+
+      article footer {
+        font-family: trajan-sans-pro, sans-serif;
+        font-style: normal;
+        text-align: center;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        font-size: 90%;
+        color: #333;
+      }
+
+      article {
+        padding: 20px;
+      }
+
+      @media only screen and (min-width: 500px) {
+        article {
+          max-width: 400px;
+          margin: 0 auto 0;
+          
+        }
+        article header {
+          margin: 140px 0 50px;
+        }
+        article header h1 {
+          font-size: 350%;
+          left: -8px;
+        }
+        article footer {
+          margin-bottom: 160px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <article>
+      <header>
+        <h1>Reading List</h1>
+        <address>Marcus Whybrow</address>
+      </header>
+
+      <div id="reading">
+        <p>Currently Reading</p>
+        <ul>
+          <li>The Brothers Karamazov (Fyodor Dostoevesky)</li>
+        </ul>
+      </div>
+
+      <ul id="unread">
+        <li>The Charterhouse of Parma (Marie-Henri Beyle)</li>
+        <li>Wuthering Heights (Emily Bronte)</li>
+        <li>The Master and Margarita (Mikhail Bulgakov)</li>
+        <li>The Horse’s Mouth (Joyce Cary)</li>
+        <li>The Big Sleep (Raymond Chandler)</li>
+        <li>The Long Goodbye (Raymond Chandler)</li>
+        <li>The Devils (Fyodor Dostoevsky)</li>
+        <li>The Idiot (Fyodor Dostoevsky)</li>
+        <li>Lord of the Flies (William Golding)</li>
+        <li>I, Claudius (Robert Graves)</li>
+        <li>The Maltese Falcon (Dashiel Hammet)</li>
+        <li>A Farewell To Arms (Ernest Hemingway)</li>
+        <li>For Whom the Bell Tolls (Ernest Hemingway)</li>
+        <li>Island (Aldous Huxley)</li>
+        <li>Point Counterpoint (Aldous Huxley)</li>
+        <li>The Fratricides (Nikos Kazantzakis)</li>
+        <li>Zorba the Greek (Nikos Kazantzakis)</li>
+        <li>One Flew Over the Cuckoo’s Nest (Ken Kesey)</li>
+        <li>Sometimes a Great Notion (Ken Kesey)</li>
+        <li>Flowers for Algernon (Daniel Keyes)</li>
+        <li>The Stone Angel (Margaret Laurence)</li>
+        <li>To Kill a Mockingbird (Harper Lee)</li>
+        <li>On the Genealogy of Morals (Friedrich Nietzsche)</li>
+        <li>The Antichrist (Friedrich Nietzsche)</li>
+        <li>The Gay Science (Friedrich Nietzsche)</li>
+        <li>The Will to Power (Friedrich Nietzsche)</li>
+        <li>1984 (George Orwell)</li>
+        <li>Road to Wigan Pier (George Orwell)</li>
+        <li>Zen and the Art of Motorcycle Maintenance (Robert Pirsig)</li>
+        <li>The House of God (Samuel Shem)</li>
+        <li>Cancer Ward (Aleksandr Solzhenitsyn)</li>
+        <li>The First Circle (Aleksandr Solzhenitsyn)</li>
+        <li>The Gulag Archipelago (Aleksandr Solzhenitsyn)</li>
+        <li>East of Eden (John Steinbeck)</li>
+        <li>The Grapes of Wrath (John Steinbeck)</li>
+        <li>Red and the Black (The Stendhal)</li>
+        <li>Fear and Loathing in Las Vegas (Hunter S Thompson)</li>
+        <li>Anna Karenina (Leo Tolstoy)</li>
+        <li>War and Peace (Leo Tolstoy)</li>
+        <li>Tolstoy (Henri Troyat)</li>
+        <li>The Electric Kool Aid Acid Test (Tom Wolfe)</li>
+      </ul>
+
+      <ul id="read">
+        <li class="read">Animal Farm (George Orwell)</li>
+        <li class="read">Beyond Good and Evil (Friedrich Nietzsche)</li>
+        <li class="read">The Old Man and the Sea (Ernest Hemingway)</li>
+        <li class="read">Brave New World (Aldous Huxley)</li>
+        <li class="read">Our Culture: What’s Left of It (Theodore Dalyrmple)</li>
+        <li class="read">Life at the Bottom: The Worldview That Makes the Underclass (Theodore Dalrymple)</li>
+        <li class="read">Crime and Punishment (Fyodor Dostoevesky)</li>
+        <li class="read">Notes from Underground (Fyodor Dostoevesky)</li>
+        <li class="read">Of Men and Mice (John Steinbeck)</li>
+      </ul>
+
+    </article>
+  </body>
+</html>
