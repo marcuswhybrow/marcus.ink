@@ -15,24 +15,16 @@
         height: 15px;
       }
       body::-webkit-scrollbar-thumb {
-        background-color: rgb(202, 202, 202);
+        background-color: rgb(0, 0, 0);
         
       }
-      body::-webkit-scrollbar-thumb:vertical {
-        background-image: linear-gradient(180deg, rgb(202, 202, 202), rgb(173, 173, 173));
-        border: 10px solid white;
+      body::-webkit-scrollbar-thumb {
+        background-color: rgb(0, 0, 0);
+        border: 10px solid rgb(20, 15, 15);
         border-left: 0;
       }
-      body::-webkit-scrollbar-thumb:horizontal {
-        background-image: linear-gradient(90deg, rgb(202, 202, 202), rgb(173, 173, 173));
-        border: 10px solid white;
-        border-top: 0;
-      }
-      body::-webkit-scrollbar-thumb:vertical:window-inactive {
-        background-image: linear-gradient(180deg, rgb(247, 247, 247), rgb(228, 228, 228));
-      }
-      body::-webkit-scrollbar-thumb:horizontal:window-inactive {
-        background-image: linear-gradient(90deg, rgb(247, 247, 247), rgb(228, 228, 228));
+      body::-webkit-scrollbar-thumb:window-inactive {
+        background-color: rgb(14, 10, 10);
       }
 
 
@@ -42,6 +34,8 @@
         font-family: mrs-eaves-xl-serif, serif;
         font-weight: 400;
         font-style: normal;
+
+        background-color: rgb(20, 15, 15);
       }
 
       article header {
@@ -76,6 +70,8 @@
         transition: font-size 0.2s;
 
         grid-area: title;
+
+        color: rgb(184, 184, 184);
       }
 
       article header address {
@@ -83,7 +79,7 @@
         font-style: normal;
         font-size: 90%;
         text-align: left;
-        color: rgb(41, 41, 41);
+        color: rgb(255, 255, 255);
       }
 
       article header a {
@@ -157,10 +153,113 @@
         padding: 20px;
       }
 
-      @media only screen and (min-width: 500px) {
+      .books::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+
+      .books a,
+      .books .category {
+        float: left;
+        height: 200px;
+        width: 130px;
+        margin-right: 5px;
+        margin-bottom: 25px;
+        overflow: hidden;
+      }
+      .books a img {
+        height: 200px;
+        filter: grayscale(80%);
+        transition: 0.4s filter ease-in-out;
+      }
+      .books a img:hover {
+        filter: grayscale(0%);
+      }
+      .books .category {
+        width: 225px;
+        padding-right: 40px;
+        display: table;
+      }
+      .books .category h2 {
+        margin: 0;
+        
+        overflow: visible;
+        width: 100%;
+
+        display: table-cell;
+        vertical-align: middle;
+        text-align: right;
+      }
+
+      .books .category#clinical-psychology-and-psychiatry h2 {
+        font-family: fertigo-script, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 200%;
+        line-height: 1em;
+        color: rgb(226, 202, 166);
+        background: -webkit-linear-gradient(rgb(204, 201, 197), rgb(235, 176, 88));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .books .category#the-state-of-the-world {
+        font-family: hobeaux-rococeaux,sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 180%;
+        line-height: 1.4em;
+        color: rgb(154, 178, 189);
+        background: -webkit-linear-gradient(rgb(176, 206, 219), rgb(121, 190, 223));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .books .category#religion-and-religious-history {
+        font-family: baroque-text-jf,sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 140%;
+        line-height: 1.9em;
+        color: rgb(255, 255, 255);
+        background: -webkit-linear-gradient(rgb(196, 196, 196), rgb(255, 126, 126));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .books .category#analysis-of-history-and-systems {
+        font-family: variex,sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 160%;
+        line-height: 1em;
+        color: rgb(255, 255, 255);
+        background: -webkit-linear-gradient(rgb(173, 204, 144), rgb(46, 66, 29));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .books .category#neuroscience {
+        font-family: caflisch-script-pro,sans-serif;
+        font-weight: 600;
+        font-style: normal;
+        font-size: 300%;
+        line-height: 1em;
+        color: rgb(255, 255, 255);
+        background: -webkit-linear-gradient(rgb(214, 190, 214), rgb(99, 51, 91));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .books#read a {
+        height: 100px;
+        width: 63px;
+      }
+      .books#read a img {
+        height: 100px;
+      }
+
+      @media only screen and (min-width: 1200px) {
         article {
-          max-width: 400px;
-          margin: 0 auto 0;
+          max-width: 1200px;
+          margin: 0 auto 100px;
           
         }
         article header {
@@ -183,142 +282,138 @@
         <address>Marcus Whybrow</address>
       </header>
 
-      <div id="reading">
-        <p>Currently Reading</p>
-        <ul>
-          <li>Lord of the Flies (William Golding)</li>
-          <li>The Brothers Karamazov (Fyodor Dostoevesky)</li>
-        </ul>
+      <div id="unread" class="books">
+        <!-- Penguin Classics -->
+        <a href="https://smile.amazon.co.uk/dp/B002RI9KLS" target="_blank"><img src="./covers/anna-karenina.jpg" alt="Anna Karenina" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B0033805UG" target="_blank"><img src="./covers/war-and-peace.jpg" alt="War and Peace" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B002RI9IU6" target="_blank"><img src="./covers/demons.jpg" alt="Demons" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B002RI95PY" target="_blank"><img src="./covers/the-idiot.jpg" alt="The Idiot" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B00CPU9NN8" target="_blank"><img src="./covers/on-the-geneology-of-morals.jpg" alt="On the Geneology of Morals" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B01J4WF9PU" target="_blank"><img src="./covers/the-will-to-power.jpg" alt="The Will to Power" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B002RI945U" target="_blank"><img src="./covers/twilight-of-idols-and-anti-christ.jpg" alt="Twilight of Idols and Anti-Christ" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B07D1FFF5W" target="_blank"><img src="./covers/the-joyous-science.jpg" alt="The Joyous Science" /></a>
+        <a href="https://smile.amazon.co.uk/dp/0140449663" target="_blank"><img src="./covers/the-charterhouse-of-parma.jpg" alt="The Charterhouse of Parma" /></a>
+        <a href="https://smile.amazon.co.uk/dp/0140447644" target="_blank" class="paperback"><img src="./covers/the-red-and-the-black.jpg" alt="The Red and the Black" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B002RI97IO" target="_blank"><img src="./covers/wuthering-heights.jpg" alt="Wuthering Heights" /></a>
+
+        <!-- Penguin Modern Classics -->
+        <a href="https://smile.amazon.co.uk/dp/B002RI9X8S" target="_blank"><img src="./covers/the-grapes-of-wrath.jpg" alt="The Grapes of Wrath" /></a>
+        <a href="https://smile.amazon.co.uk/dp/0141187883" target="_blank"><img src="./covers/one-flew-over-the-cuckoos-nest.jpg" alt="One Flew Over the Cuckoo's Nest" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B002RI9HR0" target="_blank"><img src="./covers/i-claudius.jpg" alt="I, Claudius" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B002RI9K5Y" target="_blank"><img src="./covers/east-of-eden.jpg" alt="East of Eden" /></a>
+
+        <!-- George Orwell -->
+        <a href="https://smile.amazon.co.uk/dp/B002RI9M48" target="_blank"><img src="./covers/the-road-to-wigan-pier.jpg" alt="The Road to Wigan Pier" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B002RI991O" target="_blank"><img src="./covers/nineteen-eighty-four.jpg" alt="Nineteen eighty-four" /></a>
+
+        <!-- Ernest Hemmingway -->
+        <a href="https://smile.amazon.co.uk/dp/B00FU7VBBA" target="_blank"><img src="./covers/a-farewell-to-arms.jpg" alt="A Farewell to Arms" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B00FU7VCQE" target="_blank"><img src="./covers/for-whom-the-bell-tolls.jpg" alt="For Whom the Bell Tolls" /></a>
+
+        <!-- Alexander Solzhenitsyn -->
+        <a href="https://smile.amazon.co.uk/dp/B005TKD918" target="_blank"><img src="./covers/cancer-ward.jpg" alt="Cancer Ward" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B07JCWJ8TC" target="_blank"><img src="./covers/the-gulag-archipelago.jpg" alt="The Gulag Archipelago" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B00667J1HE" target="_blank"><img src="./covers/the-first-circle.jpg" alt="The First Circle" /></a>
+
+        <!-- Raymond Chandler -->
+        <a href="https://smile.amazon.co.uk/dp/B002RI9AH2" target="_blank"><img src="./covers/the-big-sleep.jpg" alt="The Big Sleep" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B002RI9FU4" target="_blank"><img src="./covers/the-long-good-bye.jpg" alt="The Long Good-bye" /></a>
+
+        <!-- Auldus Huxley -->
+        <a href="https://smile.amazon.co.uk/dp/B0031RS72C" target="_blank"><img src="./covers/island.jpg" alt="Island" /></a>
+        <a href="https://smile.amazon.co.uk/dp/0099458195" target="_blank"><img src="./covers/point-counter-point.jpg" alt="Point Cunnter Point" /></a>
+
+        <!-- Nikos Kazantzakis -->
+        <a href="https://smile.amazon.co.uk/dp/0571105068" target="_blank" class="paperback"><img src="./covers/the-fratricides.jpg" alt="The Fratricides" /></a>
+        <a href="https://smile.amazon.co.uk/dp/0571241700" target="_blank"><img src="./covers/zorba-the-greek.jpg" alt="Zorba the Greek" /></a>
+
+        <!-- Other Authors -->
+        <a href="https://smile.amazon.co.uk/dp/B00NKY0TNG" target="_blank"><img src="./covers/fear-and-loathing-in-las-vegas.jpg" alt="Fear and Loathing in Las Vegas" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B009ZG6YPU" target="_blank"><img src="./covers/flowers-for-algernon.jpg" alt="Flowers for Algernon" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B007KOHV2Y" target="_blank"><img src="./covers/lord-of-the-flies.jpg" alt="Lord of the Flies" /></a>
+        <a href="https://smile.amazon.co.uk/dp/0140045295" target="_blank"><img src="./covers/sometimes-a-great-notion.jpg" alt="Sometimes a Great Notion" /></a>
+        <a href="https://smile.amazon.co.uk/dp/0552993662" target="_blank"><img src="./covers/the-electric-kool-aid-acid-test.jpg" alt="The Electric Kool Aid Acid Test" /></a>        
+        <a href="https://smile.amazon.co.uk/dp/B01NBOQ7V4" target="_blank"><img src="./covers/the-horses-mouth.jpg" alt="The Horses Mouth" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B0031RSATC" target="_blank"><img src="./covers/the-house-of-god.jpg" alt="The House of God" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B00N20V112" target="_blank"><img src="./covers/the-maltese-falcon.jpg" alt="The Maltese Falcon" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B003ELY7JM" target="_blank"><img src="./covers/the-master-and-margarita.jpg" alt="The Master and Margarita" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B01CGID56Y" target="_blank"><img src="./covers/the-stone-angel.jpg" alt="The Stone Angel" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B00K1XOV5G" target="_blank"><img src="./covers/to-kill-a-mockingbird.jpg" alt="To Kill a Mockingbird" /></a>
+        <a href="https://smile.amazon.co.uk/dp/0802137687" target="_blank"><img src="./covers/tolstoy.jpg" alt="Tolstoy" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B0063HC7EQ" target="_blank"><img src="./covers/zen-and-the-art-of-motorcycle-maintenance.jpg" alt="Zen and the Art of Motorcycle Maintenance" /></a>
+
+        <!-- CLinical Psychology and Psychiatry -->
+        <div id="clinical-psychology-and-psychiatry" class="category"><h2>Clinical<br />Psychology<br />and<br />Psychiatry<br /></h2></div>
+        <a href="https://smile.amazon.co.uk/dp/0465016731" target="_blank"><img src="./covers/the-discovery-of-the-unconscious.jpg" alt="The Discovery of the Unconscious" /></a>
+        <a href="https://smile.amazon.co.uk/dp/0521485088" target="_blank"><img src="./covers/genius.jpg" alt="Genius" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B002RI9Y3C" target="_blank"><img src="./covers/an-outline-of-psychoanalysis.jpg" alt="An Outline of Psychoanalysis" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B002RI98AG" target="_blank"><img src="./covers/interpreting-dreams.jpg" alt="Interpreting Dreams" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B00R6BIF1W" target="_blank"><img src="./covers/aion.jpg" alt="Aion" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B00FDR4T1G" target="_blank"><img src="./covers/answer-to-job.jpg" alt="Answer to Job" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B00R6BIDG4" target="_blank"><img src="./covers/the-archetypes-and-the-collective-unconscious.jpg" alt="Archetypes of the Collective Unconscious" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B00R6BGMJO" target="_blank"><img src="./covers/modern-man-in-search-of-a-soul.jpg" alt="Modern Man in Search of a Soul" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B00QRZED3M" target="_blank"><img src="./covers/mysterium-coniunctionis.jpg" alt="Mysterium Coniunctionis" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B00R6BIDKA" target="_blank"><img src="./covers/psychology-and-alchemy.jpg" alt="Psychology and Alchemy" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B00R6BIE4U" target="_blank"><img src="./covers/psychology-and-religion-west-and-east.jpg" alt="Psychology and Religion: West and East" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B00QRZE8VY" target="_blank"><img src="./covers/symbols-of-transformation.jpg" alt="Symbols of Transformation" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B00R6BIDK0" target="_blank"><img src="./covers/the-symbolic-life.jpg" alt="The Symbolic Life" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B00R6BIEWM" target="_blank"><img src="./covers/two-essays-on-analytical-psychology.jpg" alt="Two Essays on Analytical Psychology" /></a>
+        <a href="https://smile.amazon.co.uk/dp/1568212712" target="_blank"><img src="./covers/existence.jpg" alt="Existence: A new dimension in psychiatry and psychology" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B019P2PSDM" target="_blank"><img src="./covers/the-origins-and-history-of-consciousness.jpg" alt="The Origins and History of Consciousness" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B00RKMZZSI" target="_blank"><img src="./covers/the-great-mother.jpg" alt="The Great Mother" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B00DSLYG0S" target="_blank"><img src="./covers/play-dreams-and-imitation-in-childhood.jpg" alt="Play, Dreams and Imitation in Childhood" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B00GHJEATU" target="_blank"><img src="./covers/the-moral-judgment-of-the-child.jpg" alt="The Moral Judgment of the Child" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B00BS03VCU" target="_blank"><img src="./covers/a-way-of-being.jpg" alt="A Way of Being" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B005DKRFLO" target="_blank"><img src="./covers/on-becoming-a-person.jpg" alt="On Becoming a Person" /></a>
+
+        <!-- The State of the World -->
+        <div id="the-state-of-the-world" class="category"><h2>The<br />State of<br />the<br />World<br /></h2></div>
+        <a href="https://smile.amazon.co.uk/dp/B00CXTMWKM" target="_blank"><img src="./covers/the-great-escape.jpg" alt="The Great Escape" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B00DGY4D78" target="_blank"><img src="./covers/how-to-spend-$75-billion-to-make-the-world-a-better-place.jpg" alt="How to Spend $75 Billion to Make the World a Better Place" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B06XRXM6CV" target="_blank"><img src="./covers/progress-ten-reasons-to-look-forward-to-the-future.jpg" alt="Progress: Ten Reasons to Look Forward to the Future" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B075ZGBY6Q" target="_blank"><img src="./covers/enlightenment-now.jpg" alt="Enlightenment Now: The Case for Reason, Science, Humanism, and Progress" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B003ODI67E" target="_blank"><img src="./covers/the-rational-optimist.jpg" alt="The Rational Optimist: How Prosperity Evolves" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B0769XK7D6" target="_blank"><img src="./covers/factfulness.jpg" alt="Factfulness: Ten Reasons We’re Wrong About the World–and Why Things Are Better Than You Think" /></a>
+        <a href="https://smile.amazon.co.uk/dp/1455589128" target="_blank"><img src="./covers/earth-in-human-hands.jpg" alt="Earth in Human Hands" /></a>
+
+        <!-- Religion and Religious History -->
+        <div id="religion-and-religious-history" class="category"><h2>Religion and<br />Religious<br />History</h2></div>
+        <a href="https://smile.amazon.co.uk/dp/0801497183" target="_blank"><img src="./covers/mephistopheles.jpg" alt="Mephistopheles: The Devil in the Modern World" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B00IGQI7OQ" target="_blank"><img src="./covers/a-history-of-religious-ideas-volume-1.jpg" alt="A History of Religious Ideas, Volume 1" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B00KMQC2ZI" target="_blank"><img src="./covers/a-history-of-religious-ideas-volume-2.jpg" alt="A History of Religious Ideas, Volume 2" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B00KLX5J7U" target="_blank"><img src="./covers/a-history-of-religious-ideas-volume-3.jpg" alt="A History of Religious Ideas, Volume 3" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B00H7G5IQG" target="_blank"><img src="./covers/myth-and-reality.jpg" alt="Myth and Reality" /></a>
+        <a href="https://smile.amazon.co.uk/dp/0061319430" target="_blank"><img src="./covers/myths-dreams-and-mysteries.jpg" alt="Myths, Dreams and Mysteries" /></a>
+        <a href="https://smile.amazon.co.uk/dp/0691119422" target="_blank"><img src="./covers/shamanism.jpg" alt="Shamanism: Archaic Techniques of Ecstasy" /></a>
+        <a href="https://smile.amazon.co.uk/dp/0226203905" target="_blank"><img src="./covers/the-forge-and-the-crucible.jpg" alt="The Forge and the Crucible" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B00SJ7LTC4" target="_blank"><img src="./covers/the-sacred-and-the-profane.jpg" alt="The Sacred and the Profane" /></a>
+        <a href="https://smile.amazon.co.uk/dp/0156027801" target="_blank"><img src="./covers/the-great-code.jpg" alt="The Great Code" /></a>
+        <a href="https://smile.amazon.co.uk/dp/0156983656" target="_blank"><img src="./covers/words-with-power.jpg" alt="Words with Power" /></a>
+        <a href="https://smile.amazon.co.uk/dp/0753817527" target="_blank"><img src="./covers/the-crisis-of-islam.jpg" alt="The Crisis of Islam" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B004I43MPE" target="_blank"><img src="./covers/the-worlds-religions.jpg" alt="The World’s Religions" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B010EWIA9Q" target="_blank"><img src="./covers/the-bible.jpg" alt="The Bible: Designed to be Read as Living Literature" /></a>
+
+        <!-- Analysis of History and Systems  -->
+        <div id="analysis-of-history-and-systems" class="category"><h2>Analysis<br />of<br />History<br />and<br />Systems</h2></div>
+        <a href="https://smile.amazon.co.uk/dp/0231085621" target="_blank"><img src="./covers/little-science-big-science.jpg" alt="Little Science, Big Science" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B004FV4XTE" target="_blank"><img src="./covers/the-mystery-of-capital.jpg" alt="The Mystery of Capital: Why Capitalism Triumphs in the West and Fails Everywhere Else" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B00AK1BIDM" target="_blank"><img src="./covers/the-systems-bible.jpg" alt="The Systems Bible" /></a>
+        <a href="https://smile.amazon.co.uk/dp/069102409X" target="_blank"><img src="./covers/the-rise-of-statistical-thinking-1820-1900.jpg" alt="The Rise of Statistical Thinking 1820-1900" /></a>
+        <a href="https://smile.amazon.co.uk/dp/0385479549" target="_blank"><img src="./covers/stalin.jpg" alt="Stalin: The First In-depth Biography Based on Explosive New Documents from Russia’s Secret Archives" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B01IA89O2I" target="_blank"><img src="./covers/the-rise-and-fall-of-the-third-reich.jpg" alt="The Rise and Fall of the Third Reich " /></a>
+
+        <!-- Neuroscience -->
+        <div id="neuroscience" class="category"><h2>Neuro<br />science</h2></div>
+        <a href="https://smile.amazon.co.uk/dp/B00PWAKE2M" target="_blank"><img src="./covers/the-ecological-approach-to-visual-perception.jpg" alt="The Ecological Approach to Visual Perception" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B003D5DK0G" target="_blank"><img src="./covers/the-new-executive-brain.jpg" alt="The New Executive Brain" /></a>
+        <a href="https://smile.amazon.co.uk/dp/0198522711" target="_blank"><img src="./covers/the-neuropsychology-of-anxiety.jpg" alt="The Neuropsychology of Anxiety" /></a>
+        <a href="https://smile.amazon.co.uk/dp/0753806703" target="_blank"><img src="./covers/the-emotional-brain.jpg" alt="The Emotional Brain" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B00590X4HM" target="_blank"><img src="./covers/affective-neuroscience.jpg" alt="Affective Neuroscience" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B00M4406DQ" target="_blank"><img src="./covers/the-man-who-mistook-his-wife-for-a-hat.jpg" alt="The Man who Mistook his Wife for a Hat" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B00569FP8M" target="_blank"><img src="./covers/awakenings.jpg" alt="Awakenings" /></a>
+        <a href="https://smile.amazon.co.uk/dp/B00569FOT2" target="_blank"><img src="./covers/an-anthropologist-on-mars.jpg" alt="An Anthropologist on Mars" /></a>
+        <a href="https://smile.amazon.co.uk/dp/019537858X" target="_blank"><img src="./covers/brain-architecture.jpg" alt="Brain Architecture: Understanding the Basic Plan" /></a>
       </div>
-
-      <ul class="unread">
-        <li>The Charterhouse of Parma (Marie-Henri Beyle)</li>
-        <li>Wuthering Heights (Emily Bronte)</li>
-        <li>The Master and Margarita (Mikhail Bulgakov)</li>
-        <li>The Horse’s Mouth (Joyce Cary)</li>
-        <li>The Big Sleep (Raymond Chandler)</li>
-        <li>The Long Goodbye (Raymond Chandler)</li>
-        <li>The Devils (Fyodor Dostoevsky)</li>
-        <li>The Idiot (Fyodor Dostoevsky)</li>
-        <li>I, Claudius (Robert Graves)</li>
-        <li>The Maltese Falcon (Dashiel Hammet)</li>
-        <li>A Farewell To Arms (Ernest Hemingway)</li>
-        <li>For Whom the Bell Tolls (Ernest Hemingway)</li>
-        <li>Island (Aldous Huxley)</li>
-        <li>Point Counterpoint (Aldous Huxley)</li>
-        <li>The Fratricides (Nikos Kazantzakis)</li>
-        <li>Zorba the Greek (Nikos Kazantzakis)</li>
-        <li>One Flew Over the Cuckoo’s Nest (Ken Kesey)</li>
-        <li>Sometimes a Great Notion (Ken Kesey)</li>
-        <li>Flowers for Algernon (Daniel Keyes)</li>
-        <li>The Stone Angel (Margaret Laurence)</li>
-        <li>To Kill a Mockingbird (Harper Lee)</li>
-        <li>On the Genealogy of Morals (Friedrich Nietzsche)</li>
-        <li>The Antichrist (Friedrich Nietzsche)</li>
-        <li>The Gay Science (Friedrich Nietzsche)</li>
-        <li>The Will to Power (Friedrich Nietzsche)</li>
-        <li>1984 (George Orwell)</li>
-        <li>Road to Wigan Pier (George Orwell)</li>
-        <li>Zen and the Art of Motorcycle Maintenance (Robert Pirsig)</li>
-        <li>The House of God (Samuel Shem)</li>
-        <li>Cancer Ward (Aleksandr Solzhenitsyn)</li>
-        <li>The First Circle (Aleksandr Solzhenitsyn)</li>
-        <li>The Gulag Archipelago (Aleksandr Solzhenitsyn)</li>
-        <li>East of Eden (John Steinbeck)</li>
-        <li>The Grapes of Wrath (John Steinbeck)</li>
-        <li>Red and the Black (The Stendhal)</li>
-        <li>Fear and Loathing in Las Vegas (Hunter S Thompson)</li>
-        <li>Anna Karenina (Leo Tolstoy)</li>
-        <li>War and Peace (Leo Tolstoy)</li>
-        <li>Tolstoy (Henri Troyat)</li>
-        <li>The Electric Kool Aid Acid Test (Tom Wolfe)</li>
-      </ul>
-
-      <ul class="unread">
-        <li>The Discovery of the Unconscious (Henri Ellenberger)</li>
-        <li>Genius (Hans Eysenck)</li>
-        <li>Man’s Search for Meaning (Viktor Frankl)</li>
-        <li>An Outline of Psychoanalysis (Sigmund Freud)</li>
-        <li>The Interpretation of Dreams (Sigmund Freud)</li>
-        <li>Aion (Carl Jung)</li>
-        <li>Answer to Job (Carl Jung)</li>
-        <li>Archetypes of the Collective Unconscious (Carl Jung)</li>
-        <li>Modern Man in Search of a Soul (Carl Jung)</li>
-        <li>Mysterium Coniunctionis (Difficult; read the last half) (Carl Jung)</li>
-        <li>Psychology and Alchemy (Carl Jung)</li>
-        <li>Psychology: East and West (Carl Jung)</li>
-        <li>Psychology of Religion: East and West (Carl Jung)</li>
-        <li>Symbols of Transformation (Carl Jung)</li>
-        <li>The Symbolic Life (Carl Jung)</li>
-        <li>Two Essays on Analytical Psychology (Carl Jung)</li>
-        <li>Angel, Ernest & Ellenberger, Henri: Existence: A new dimension in psychiatry and psychology (Rollo May)</li>
-        <li>The Origins and History of Consciousness (Erich Neumann)</li>
-        <li>The Great Mother (Erich Neumann)</li>
-        <li>Play, Dreams and Imitation in Childhood (Jean Piaget)</li>
-        <li>The Moral Judgment of the Child (Jean Piaget)</li>
-        <li>A Way of Being (Carl Rogers)</li>
-        <li>On Becoming a Person (Carl Rogers)</li>
-      </ul>
-
-      <ul class="unread">
-        <li>The Great Escape (Angus Deaton)</li>
-        <li>How to Spend $75 Billion to Make the World a Better Place (Bjorn Lomborg)</li>
-        <li>Progress: Ten Reasons to Look Forward to the Future (Johan Norberg)</li>
-        <li>Enlightenment Now: The Case for Reason, Science, Humanism, and Progress (Steven Pinker)</li>
-        <li>The Rational Optimist: How Prosperity Evolves (Matt Ridley)</li>
-        <li>Factfulness: Ten Reasons We’re Wrong About the World–and Why Things Are Better Than You Think (Hans Rosling)</li>
-        <li>Earth in Human Hands (David Grinspoon)</li>
-      </ul>
-      
-      <ul class="unread">
-        <li>Mephistopheles: The Devil in the Modern World (Jeffrey Burton Russell)</li>
-        <li>A History of Religious Ideas (Mircea Eliade)</li>
-        <li>Myth and Reality (Mircea Eliade)</li>
-        <li>Myths, Dreams and Mysteries (Mircea Eliade)</li>
-        <li>Shamanism: Archaic Techniques of Ecstasy (Mircea Eliade)</li>
-        <li>The Forge and the Crucible (Mircea Eliade)</li>
-        <li>The Sacred and the Profane (Mircea Eliade)</li>
-        <li>The Great Code (Northrop Frye)</li>
-        <li>Words with Power (Northrop Frye)</li>
-        <li>The Crisis of Islam (Bernard Lewis)</li>
-        <li>The World’s Religions (Huston Smith)</li>
-        <li>The Bible: Designed to be Read as Living Literature</li>
-      </ul>
-
-      <ul class="unread">
-        <li>Little Science, Big Science (Derek J de Solla Price)</li>
-        <li>The Mystery of Capital: Why Capitalism Triumphs in the West and Fails Everywhere Else (Hernando DeSoto)</li>
-        <li>Systemantics: How Systems Work and Especially How They Fail (John Gall)</li>
-        <li>The Rise of Statistical Thinking 1820-1900 (Theodore M Porter)</li>
-        <li>Stalin: The First In-depth Biography Based on Explosive New Documents from Russia’s Secret Archives (Edvard Radzinsky)</li>
-        <li>The Rise and Fall of the Third Reich (William L Shirer)</li>
-      </ul>
-
-      <ul class="unread">
-        <li>An Ecological Approach to Visual Perception (James J Gibson)</li>
-        <li>The New Executive Brain (Elkhonon Goldberg)</li>
-        <li>The Neuropsychology of Anxiety (Jeffrey Gray, Neil McNaughton)</li>
-        <li>The Emotional Brain (Joseph LeDoux)</li>
-        <li>Affective Neuroscience (Jaak Panksepp)</li>
-        <li>The Man who Mistook his Wife for a Hat (Oliver Sacks)</li>
-        <li>Awakenings (Oliver Sacks)</li>
-        <li>An Anthropologist on Mars (Oliver Sacks)</li>
-        <li>Brain Architecture: Understanding the Basic Plan (Larry Swanson)</li>
-      </ul>
-
-      <ul id="read">
-        <li>The Denial of Death (Ernest Becker)</li>
-        <li>Animal Farm (George Orwell)</li>
-        <li>Beyond Good and Evil (Friedrich Nietzsche)</li>
-        <li>The Old Man and the Sea (Ernest Hemingway)</li>
-        <li>Brave New World (Aldous Huxley)</li>
-        <li>Our Culture: What’s Left of It (Theodore Dalyrmple)</li>
-        <li>Life at the Bottom: The Worldview That Makes the Underclass (Theodore Dalrymple)</li>
-        <li>Crime and Punishment (Fyodor Dostoevesky)</li>
-        <li>Notes from Underground (Fyodor Dostoevesky)</li>
-        <li>Of Men and Mice (John Steinbeck)</li>
-      </ul>
-
     </article>
   </body>
 </html>
