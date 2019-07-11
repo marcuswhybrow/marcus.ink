@@ -267,6 +267,49 @@
         height: 100px;
       }
 
+      #recommendations {
+        margin-top: 40px;
+        margin-left: 0;
+        transition-property: margin;
+        transition-duration: 0.2s;
+      }
+      #recommendations h1 {
+        font-weight: 200;
+        text-transform: uppercase;
+        font-size: 200%;
+        line-height: 1.1em;
+        text-align: left;
+        margin: 0;
+        margin-bottom: 5px;
+
+        font-family: trajan-sans-pro, sans-serif;
+        font-style: normal;
+
+        position: relative;
+        left: -3px;
+
+        transition: font-size 0.2s;
+
+        grid-area: title;
+
+        color: rgb(184, 184, 184);
+      }
+      blockquote {
+        margin: 0;
+        padding: 0;
+        color: rgb(129, 122, 122);
+        font-size: 90%;
+        line-height: 120%;
+        max-width: 600px;
+        margin-bottom: 10px;
+      }
+      blockquote a {
+        color: rgb(129, 122, 122);
+      }
+      blockquote a:hover {
+        color: rgb(185, 166, 166);
+      }
+
       @media only screen and (min-width: 1200px) {
         article {
           max-width: 1200px;
@@ -282,6 +325,10 @@
         }
         article footer {
           margin-bottom: 160px;
+        }
+        #recommendations {
+          margin-top: 100px;
+          margin-left: 270px;
         }
       }
     </style>
@@ -427,6 +474,13 @@
         <a href="https://smile.amazon.co.uk/dp/B002RI9NQU" target="_blank"><img src="./covers/einstein.jpg" alt="Einstein: His Life and Universe" /></a>
         <a href="https://smile.amazon.co.uk/dp/B003YFJ3ZQ" target="_blank"><img src="./covers/benjamin-franklin.jpg" alt="Benjamin Franklin: An American Life" /></a>
         <a href="https://smile.amazon.co.uk/dp/B002XHNNHU" target="_blank"><img src="./covers/structures.jpg" alt="Structures: Or Why Things Don't Fall Down" /></a>
+      </div>
+
+      <div id="recommendations">
+        <h1>Recommendations</h1>
+        <blockquote cite="https://youtu.be/8ABa4RdNPxU?t=6070">
+          Don't take any nonsense. Read the damn classics. [...] Read Freud, read Jung, read Adler, read Rogers, read Maslow. These people knew what the hell they were talking about. Read the behaviourists, get yourself educated with regards to neuroscience. There's lot's of great things out there to read and if your professors are too stupid to teach you what they should teach you - you gotta educate yourself in university anyways, you know. So that's what I would recommend. [...] There are great things to read, I mean read you Jung: that'll turn you inside out. You know, read Nietzsche. There's lot's of great thinkers and, you know, you have to read them intelligently. — <a href="https://youtu.be/8ABa4RdNPxU?t=6070" target="_blank">Jordan Peterson</a>
+        </blockquote>
       </div>
     </article>
   </body>
