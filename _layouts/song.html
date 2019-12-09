@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>{{ page.song_title }} &bull; Marcus Whybrow</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="{{ page.song_title }}{% if page.song_author %} by {{ page.song_author }}{% endif %}.">
+    <link rel="stylesheet" href="https://use.typekit.net/ydk2vlq.css">
+    <link href="https://fonts.googleapis.com/css?family={{ page.song_title_font | replace: ' ', '+' }}&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <a id="banner" href="./">Songs</a>
+
+    <article>
+      <header>
+        {% assign slug = page.url | split: '/' | last | split: '.' | first %}
+        <h1 class="{{ slug }}">{{ page.song_title }}</h1>
+        {% if page.song_author %}<address>{{ page.song_author }}</address>{% endif %}
+      </header>
+
+      {{ content }}
+    </article>
+  </body>
+</html>

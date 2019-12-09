@@ -1,3 +1,5 @@
+---
+---
 <!doctype html>
 <html lang="en">
   <head>
@@ -42,14 +44,14 @@
 
     <article>
       <div id="songs">
-        <a href="./hallelujah" class="hallelujah">Hallelujah</a>
+        {% include song-link.html title="Hallelujah" slug="hallelujah" %}
         <div id="songs-christmas">
-          <a href="./merry-christmas-everybody" class="merry-christmas-everybody">Merry Christmass Everybody</a>
-          <a href="./i-wish-it-could-be-christmas-everyday" class="i-wish-it-could-be-christmas-everyday">I Wish It Could Be Christmas Everyday</a>
-          <a href="./christmas-time" class="christmas-time">Christmas Time</a>
+          {% include song-link.html title="Merry Christmass Everybody" slug="merry-christmas-everybody" %}
+          {% include song-link.html title="I Wish It Could Be Christmas Everyday" slug="i-wish-it-could-be-christmas-everyday" %}
+          {% include song-link.html title="Christmas Time" slug="christmas-time" %}
         </div>
         <div id="hyms">
-          <a href="./hark-the-herald-angels-sing" class="hark-the-herald-angels-sing">Hark! The Herald Angels Sing</a>
+          {% include song-link.html title="Hark! The Herald Angels Sing" slug="hark-the-herald-angels-sing" %}
         </div>
       </div>
     </article>
