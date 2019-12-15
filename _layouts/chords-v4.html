@@ -107,6 +107,7 @@
       <header>
         {% assign slug = page.url | split: '/' | last | split: '.' | first %}
         <h1 class="{{ slug }}">{{ page.song_title }}</h1>
+        <a href="/chords/">back</a>
         {% if page.song_author %}<address>{{ page.song_author }}</address>{% endif %}
       </header>
 
