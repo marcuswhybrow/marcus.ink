@@ -344,12 +344,17 @@
       }
     }
 
-    var t0 = performance.now();
     var notationElement = document.getElementById("notation");
         notationString = notationElement.textContent;
-    new Piece(notationString).render(document.getElementById("render"));
 
-    var t1 = performance.now();
-    console.log((t1 - t0) + "ms");
+    const t0 = performance.now();
+    const piece = new Piece(notationString);
+    const t1 = performance.now();
+    piece.render(document.getElementById("render"));
+    const t2 = performance.now();
+
+    console.log(`Time to completetion: ${t2 - t0}ms`);
+    console.log(`Time to parse: ${t1 - t0}ms`);
+    console.log(`Time to render: ${t2 - t1}ms`);
   </script>
 </html>
