@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>{{ page.song_title }} &bull; Marcus Whybrow</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="{{ page.song_title }}{% if page.song_author %} by {{ page.song_author }}{% endif %}.">
+    <link rel="stylesheet" href="https://use.typekit.net/ydk2vlq.css">
+    <link href="https://fonts.googleapis.com/css?family={{ page.song_title_font | replace: ' ', '+' }}&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+      #render {
+        font-family: monospace;
+
+        border-bottom: 10px solid black;
+      }
+      #render .bar {
+        display: inline-block;
+        border-left: 1px solid rgb(133, 133, 133);
+        margin: 10px 0;
+      }
+      #render .bar.bar-double {
+        position: relative;
+        border-left: 1px solid rgb(53, 53, 53);
+        margin-left: 2px;
+        /* background-color: rgb(230, 230, 230); */
+      }
+      #render .bar.bar-double:after {
+        content: " ";
+        position: absolute;
+        z-index: -1;
+        top: -0;
+        left: -3px;
+        width: 1px;
+        bottom: 0;
+        background-color: rgb(53, 53, 53);
+      }
+      #render .bar .beat {
+        display: inline-block;
+        vertical-align: top;
+      }
+      #render .bar .beat .voice {
+        height: 15px;
+      }
+
+      #render .bar .beat .instrument {
+        padding: 5px 0;
+        margin: 10px 0;
+      }
+      #render .bar .beat .instrument:first-child {
+        margin-top: 0;
+      }
+      #render .bar .beat .instrument:last-child {
+        margin-bottom: 0;
+      }
+      #render .bar .beat .instrument:nth-child(odd) {
+        background-color: rgb(238, 238, 238); 
+      }
+      
+    </style>
+  </head>
+  <body>
+    <!-- <a id="banner" href="./">Songs</a> -->
+
+    <article>
+      <header>
+        {% assign slug = page.url | split: '/' | last | split: '.' | first %}
+        <h1 class="{{ slug }}">{{ page.song_title }}</h1>
+        {% if page.song_author %}<address>{{ page.song_author }}</address>{% endif %}
+      </header>
+
+      <div id="render">
+        <div class="piece">
+          <div class="section">
+            <div class="bar">
+              <div class="beat">
+                <div class="instrument">
+                  <div class="voice"></div>
+                </div>
+              </div>
+            </div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
+          <div class="section">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
+        </div>
+      </div>
+
+
+<pre id="notation">{{ content }}</pre>
+    </article>
+  </body>
+
+  <script type="application/javascript">
+    class Piece {
+      constructor(notation) {
+        this.notation = notation;
+        this.sections = this._parseNotation(this.notation);
+
+        console.log("notation", this.notation);
+        console.log("sections", this.sections);
+      }
+
+      render(element) {
+        element.appendChild(this.deriveElement());
+      }
+
+      deriveElement() {
+        const pieceElement = document.createElement("div");
+        pieceElement.className = "piece";
+        this.sections.map(section => pieceElement.appendChild(section.deriveElement()))
+        return pieceElement;
+      }
+
+      _parseNotation(notation) {
+        let sections = [];
+
+        
+        notation.groups.map(group => {
+
+        });
+
+        return sections;
+      }
+
+      // deriveInstruments() {
+      //   let instruments = [];
+      //   const trackIdentiferNames = this.notation.deriveGroupsGroupedByIdentifierName();
+      //   for (const trackIdentifierName in trackIdentiferNames) {
+      //     const tracks = trackIdentiferNames[trackIdentifierName];
+      //     instruments.push(new Piece.Instrument(this, tracks));
+      //   }
+      //   return instruments;
+      // }
+    }
+    Piece.Section = class {
+      constructor(parentPiece, bars) {
+        this.piece = parentPiece;
+        this.bars = bars;
+      }
+
+      deriveElement() {
+        const sectionElement = document.createElement("div");
+        sectionElement.className = "section";
+        this.bars.map(bar => sectionElement.appendChild(bar.deriveElement()));
+        return sectionElement;
+      }
+    }
+    Piece.Section.Bar = class {
+      constructor(section, beats) {
+        this.section = section;
+        this.beats = beats;
+      }
+
+      deriveElement() {
+        const barElement = document.createElement("div");
+        barElement.className = "bar";
+        this.beats.map(beat => barElement.appendChild(beat.deriveElement()));
+        return barElement;
+      }
+
+      deriveBeats() {
+        return [];
+      }
+    }
+    Piece.Section.Bar.Beat = class {
+      constructor(bar, instruments) {
+        this.bar = bar;
+        this.instruments = instruments;
+      }
+
+      deriveElement() {
+        const beatElement = document.createElement("div");
+        beatElement.className = "beat";
+        this.instruments.map(instrument => beatElement.appendChild(instrument.deriveElement()));
+        return beatElement;
+      }
+
+      deriveInstruments() {
+        return [];
+      }
+    }
+    Piece.Section.Bar.Beat.Instrument = class {
+      constructor(beat, voices) {
+        this.beat = beat;
+        this.voices = voices;
+      }
+
+      deriveElement() {
+        const instrumentElement = document.createElement("div");
+        instrumentElement.className = "instrument";
+        this.voices.map(voice => instrumentElement.appendChild(voice.deriveElement()));
+        return instrumentElement;
+      }
+    }
+    Piece.Section.Bar.Beat.Instrument.Voice = class {
+      constructor(instrument, text) {
+        this.instrument = instrument;
+        this.text = text;
+      }
+
+      deriveElement() {
+        const voiceElement = document.createElement("div");
+        voiceElement.className = "voice";
+        voiceElement.appendChild(document.createTextNode(this.text));
+        return voiceElement;
+      }
+    }
+
+    // ---------------------------------------------------------------------- \\
+    //                                NOTATION                                \\
+    // ---------------------------------------------------------------------- \\
+    
+    class Notation {
+      constructor(notationString) {
+        this.literal = notationString;
+        this.groups = this._parseNotationString(notationString);
+        this.intruments = this._deriveInstruments(this.groups);
+      }
+
+      deriveGroupsGroupedByIdentifierName() {
+        let groups = {};
+        for (const groupIndex in this.groups) {
+          const group = this.groups[groupIndex];
+          const groupTracks = group.deriveTracksGroupedByIdentifierName();
+          for (const groupTrackIdenfierName in groupTracks) {
+            const groupInstrument = groupTracks[groupTrackIdenfierName];
+            const match = groupTrackIdenfierName.match(/(.+)\.$/);
+            if (!match) {
+              groups[groupTrackIdenfierName] = groups[groupTrackIdenfierName] || [];
+              groups[groupTrackIdenfierName].push(groupInstrument);
+            } else {
+              const groupTrackIdenfierNameAbbreviation = match[1];
+              let existingInstrumentNameMatch = null;
+              for (const existingInstrumentName in groups) {
+                if (existingInstrumentName.indexOf(groupTrackIdenfierNameAbbreviation) === 0) {
+                  existingInstrumentNameMatch = existingInstrumentName;
+                  break;
+                }
+              }
+              if (existingInstrumentNameMatch) {
+                groups[existingInstrumentNameMatch].push(groupInstrument);
+              } else {
+                const instrumentTrack = groupInstrument[0];
+                const lineNumber = instrumentTrack.deriveLiteralLineNumber();
+                console.error(
+                  `Ignoring line ${lineNumber}: ` +
+                  `cannot understand instrument abbreviation "${groupTrackIdenfierName}":\n\n` +
+                  `${instrumentTrack.notationGroup.deriveDebugString()}\n\n`
+                );
+              }
+            }   
+          }
+        }
+        return groups;
+      }
+
+      _parseNotationString(notationString) {
+        const notationSectionStrings = notationString.split(/(\n[\s\n]*\n)/);
+        let notationGroups = [];
+        for (let notationSectionIndex = 0; notationSectionIndex < notationSectionStrings.length;) {
+          const notationGroupIndex = notationSectionIndex;
+          const notationSectionString = notationSectionStrings[notationSectionIndex++];
+          const nextNotationSectionString = notationSectionStrings[notationSectionIndex++];
+          let notationSectionTrailingBlankLinesCount = 0;
+          if (nextNotationSectionString) {
+            if (nextNotationSectionString.match(/^\n[\s\n]*\n$/)) {
+              notationSectionTrailingBlankLinesCount = (nextNotationSectionString.match(/\n/g) || []).length - 1;
+            } else {
+              // Not sure this can even occure!
+              // There cannnot be a subsequent notationSection without trail blank lines.
+              console.error("Formatting error: Notation group not followed by at least one blank line.");
+            }
+          }
+          notationGroups.push(
+            new Notation.Group(
+              this,
+              notationSectionString,
+              notationSectionTrailingBlankLinesCount,
+              notationGroupIndex
+            )
+          );
+        }
+        return notationGroups;
+      }
+
+      _deriveInstruments(groups) {
+        for (const groupIndex in groups) {
+          const group = groups[groupIndex];
+        }
+      }
+    }
+    Notation.Group = class {
+      constructor(notation, notationGroupString,
+                  notationGroupTrailingNewlinesCount, notationGroupIndex) {
+        this.literal = notationGroupString;
+        this.trackLiterals = this.literal.split(/\n/);
+        this.notation = notation;
+        this.index = parseInt(notationGroupIndex);
+        this.trailingNewlinesCount = notationGroupTrailingNewlinesCount;
+        this.verticalDelineations = this._deriveVerticalDelineations();
+        this.identifiers = this._deriveIdentifers(this.verticalDelineations);
+        this.tracks = this._parseNotationGroupString(notationGroupString);
+        this.literalLineCount = this.trailingNewlinesCount + this.tracks.length;
+      }
+
+      deriveTracksGroupedByIdentifierName() {
+        let tracks = {};
+        let previousTrackInstrumentName = null;
+        for (const trackIndex in this.tracks) {
+          const track = this.tracks[trackIndex];
+          if (track.identifier.name) {
+            tracks[track.identifier.name] = tracks[track.identifier.name] || [];
+            tracks[track.identifier.name].push(track);
+            previousTrackInstrumentName = track.identifier.name; 
+          } else {
+            tracks[previousTrackInstrumentName].push(track);
+          }
+        }
+        return tracks;
+      }
+
+      deriveLiteralLineNumber() {
+        const allNotationGroups = this.notation.groups;
+        let lineNumber = 1;
+        for (const notationGroupIndex in allNotationGroups) {
+          const notationGroup = allNotationGroups[notationGroupIndex];
+          if (notationGroup === this) break;
+          lineNumber += notationGroup.literalLineCount;
+        }
+        return lineNumber;
+      }
+
+      deriveDebugString() {
+        const notationGroupLineNumber = this.deriveLiteralLineNumber();
+        let lines = this.trackLiterals.slice();
+        const lineCount = lines.length;
+        const maxLineNumber = notationGroupLineNumber + lineCount - 1;
+        const maxLineNumberTagLength = maxLineNumber.toString().length;
+        lines = lines.map((line, index) => {
+          const lineNumber = notationGroupLineNumber + index;
+          const lineTag = lineNumber.toString().padStart(maxLineNumberTagLength + 1, '0');
+          return `${lineTag}: ${line}`;
+        });
+        return lines.join('\n');
+      }
+
+      isVerticallyHomogenous(literalPosition, candidateString) {
+        const candidateCharacters = candidateString.split('');
+        for (const candidateCharactersIndex in candidateCharacters) {
+          const cursor = literalPosition + parseInt(candidateCharactersIndex);
+          const literalCharacter = this.verticallyHomogenousPositions[cursor];
+          if (!literalCharacter || (literalCharacter !== candidateCharacters[candidateCharactersIndex]))
+            return false;
+        }
+        return true;
+      }
+
+      _parseNotationGroupString(groupString) {
+        return groupString.split(/\n/).map((trackString, trackIndex) => {
+          return new Notation.Group.Track(this, trackString, trackIndex);
+        });
+      }
+
+      _deriveVerticallyHomogenousPositions() {
+        const trackCount = this.trackLiterals.length;
+        if (trackCount < 1) return [];
+        const characters = this.trackLiterals[0].split('');
+        for (let trackIndex = 1; trackIndex < trackCount; trackIndex++) {
+          for (const characterIndex in characters) {
+            const trackCharacter = this.trackLiterals[trackIndex].substr(characterIndex, 1);
+            if (trackCharacter !== characters[characterIndex]) {
+              delete characters[characterIndex];
+            }
+          }
+        }
+        return characters;
+      }
+
+      _deriveVerticalDelineations() {
+        const vhps = this._deriveVerticallyHomogenousPositions();
+        const delineations = [];
+        vhps.map((char, pos) => {
+          switch (char) {
+            case "/":
+              if (vhps[pos + 1] === "|" && vhps[pos + 2] === "|") {
+                delete vhps[pos + 1];
+                delete vhps[pos + 2];
+                delineations[pos] = "/||";
+                return;
+              }
+              break;
+            
+            case "|":
+              if (vhps[pos + 1] === "|" ) {
+                delete vhps[pos + 1];
+                delineations[pos] = "||";
+                return;
+              } else {
+                delineations[pos] = "|";
+                return;
+              }
+              break;
+            1
+            case " ":
+              delineations[pos] = " ";
+              return;
+            
+            default:
+              return;
+          }
+          console.error(
+            `Bad formatting: ignoring column ${pos + 1} on line ${this.deriveLiteralLineNumber()}: \n\n` +
+            `${this.deriveDebugString()}\n\n`
+          );
+        });
+        return delineations;
+      }
+
+      _deriveIdentifers(verticalDelineations) {
+        let firstBarPosition = null;
+        console.log("_deriveIdentifiers", verticalDelineations);
+        for (const delineationPosition in verticalDelineations) {
+          if (verticalDelineations[delineationPosition].match(/[\|\/]+/)) {
+            firstBarPosition = delineationPosition;
+            break;
+          }
+        }
+        if (!firstBarPosition) {
+          console.error(
+            `Bad formatting: ignoring all bars in system beginning line ${this.deriveLiteralLineNumber()}: \n\n` +
+            `${this.deriveDebugString()}\n\n`
+          );
+          return null;
+        }
+        return new Notation.Group.Identifiers(
+          this,
+          this.trackLiterals.map(tl => tl.substring(0, firstBarPosition))
+        );
+      }
+    }
+    Notation.Group.Identifiers = class {
+      constructor(group, tracks) {
+        this.group = group;
+        this.tracks = tracks;
+        this.width = tracks[0].length;
+      }
+    }
+    Notation.Group.Bars = class {
+      constructor(group, tracks) {
+
+      }
+    }
+    Notation.Group.Bars.Bar = class {
+      constructor(bars, tracks) {
+
+      }
+    }
+    Notation.Group.Bars.Bar.Beat = class {
+      constructor(bar, tracks) {
+
+      }
+    }
+
+    Notation.Group.Delineations = class {
+      constructor(group, groupLiteralString) {
+        this.group = group;
+        this.groupLiteralString = groupLiteralString;
+        this.verticalDelineations = this._deriveVerticalDelineations();
+        this.horizontalSpans = this._deriveHorizontalSpans(this.verticalDelineations);
+      }
+
+      
+
+      _deriveHorizontalSpans(verticalDelineations) {
+        const spans = {
+          identifiers: null,
+
+        }
+        for (const delineationPosition in verticalDelineations) {
+          switch(verticalDelineations) {
+            case " ":
+            case "|":
+            case "||":
+            case "/||":
+          }
+        }
+      }
+    }
+    Notation.Group.Section = class {
+
+    }
+    Notation.Group.Bar = class {
+      constructor(group, type, start, end) {
+        this.group = group;
+        this.type = type;
+        this.start = start;
+        this.end = end;
+      }
+    }
+    Notation.Group.Beat = class {
+
+    }
+    Notation.Group.Beat.Voice = class {
+
+    }
+    Notation.Group.Track = class {
+      constructor(notationGroup, notationGroupTrackString, 
+                  notationGroupTrackStringIndex) {
+        this.notationGroup = notationGroup;
+        this.literal = notationGroupTrackString;
+        this.index = parseInt(notationGroupTrackStringIndex);
+        const data = this._parseNotationGroupTrackString(notationGroupTrackString);
+        this.identifier = data.identifier;
+        this.content = data.content;
+      }
+
+      _parseNotationGroupTrackString(notationGroupTrackString) {
+        const split = notationGroupTrackString.split(/^([^\|\/]*\s+)(\|+)/);
+
+        let track = {
+          identifier: {
+            name: null,
+            literal: null
+          },
+          content: {
+            literal: null,
+            tokens: null,
+          },
+        };
+        if (split.length < 4) {
+          const lineNumber = this.deriveLiteralLineNumber();
+          console.error(
+            `Formatting error: Cannot identify track name on line ${lineNumber}: \n\n` +
+            `${this.notationGroup.deriveDebugString()}\n\n`,
+          );
+        } else {
+          track.identifier.literal = split[1];
+          if (track.identifier.literal)
+            track.identifier.name = track.identifier.literal.trim();
+          track.content.literal = split[2] + split[3];
+          track.content.tokens = this._parseNotationGroupTrackContentString(
+            track.content.literal,
+            track.identifier.literal.length
+          );
+        }
+        return track;
+      }
+
+      _parseNotationGroupTrackContentString(
+        notationGroupTrackContentString,
+        notationGroupTrackIdentifierLiteralLength
+      ) {
+        let tokenStrings = notationGroupTrackContentString.split(/([^\s]+\s+)/);
+        let tokenStringPostion = notationGroupTrackIdentifierLiteralLength;
+        tokenStrings = tokenStrings.filter(tokenString => tokenString);
+        return tokenStrings.map((tokenString, tokenStringIndex) => {
+          const token = new Notation.Group.Track.Token(
+            tokenString,
+            tokenStringIndex,
+            tokenStringPostion
+          );
+          tokenStringPostion += tokenString.length;
+          return token;
+        });
+      }
+
+      deriveLiteralLineNumber() {
+        return this.notationGroup.deriveLiteralLineNumber() + this.index;
+      }
+    }
+    Notation.Group.Track.Token = class {
+      constructor(literal, index, position) {
+        this.literal = literal;
+        this.text = this.literal.trim();
+        this.index = index;
+        this.position = position;
+        this.type = this._deriveType();
+      }
+
+      _deriveType() {
+        switch (this.text) {
+          case "|":   return "BAR_LINE_SINGLE";
+          case "||":  return "BAR_LINE_DOUBLE";
+          case "/||": return "BAR_LINE_FINAL";
+          default:    return "BEAT";
+        }
+      }
+    }
+
+    
+
+    var t0 = performance.now();
+    var notationElement = document.getElementById("notation");
+        notationString = notationElement.textContent;
+    new Piece(new Notation(notationString));
+
+    var t1 = performance.now();
+    console.log((t1 - t0) + "ms");
+  </script>
+</html>
