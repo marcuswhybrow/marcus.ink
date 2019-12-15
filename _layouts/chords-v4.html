@@ -17,6 +17,20 @@
         border-left: 1px solid rgb(202, 202, 202);
         margin: 10px 0;
       }
+      #render .bar:last-child {
+        position: relative;
+        border-right: 1px solid rgb(202, 202, 202);
+      }
+      #render .bar:last-child:after {
+        content: " ";
+        position: absolute;
+        z-index: -1;
+        top: -0;
+        right: -5px;
+        width: 2px;
+        bottom: 0;
+        background-color: rgb(180, 180, 180);
+      }
       #render .bar.bar-double {
         position: relative;
         border-left: 1px solid rgb(180, 180, 180);
