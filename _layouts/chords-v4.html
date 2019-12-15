@@ -123,7 +123,6 @@
     class Piece {
       constructor(notationLiteral) {
         this.parser = new Parser(notationLiteral);
-        console.log(this.parser);
       }
 
       render(element) {
@@ -326,7 +325,6 @@
               return;
           }
         });
-        console.log(nameLines);
         const bars = [[column[0]]];
         // Consume bars
         while(column = columns.shift()) {
