@@ -30,14 +30,17 @@ class Piece extends React.Component {
   imperativePostProcessing() {
     // Add "bar-last-in-row" class to appropriate bars
     const bars = Object.values(this.ref.current.children);
-    bars.map(bar => bar.classList.remove("bar-last-in-row"));
+    bars.map(bar => bar.classList.remove("bar-first-in-row", "bar-last-in-row"));
     const barRows = {};
     bars.map(bar => {
       const verticalPos = bar.getBoundingClientRect().top;
       barRows[verticalPos] = barRows[verticalPos] || [];
       barRows[verticalPos].push(bar);
     });
-    Object.values(barRows).map(bars => bars[bars.length - 1].classList.add("bar-last-in-row"));
+    Object.values(barRows).map(bars => {
+      bars[0].classList.add("bar-first-in-row");
+      bars[bars.length - 1].classList.add("bar-last-in-row")
+    });
 
     // Add "instrument-hide" class to any instruments empty for an entire row
     const instruments = Object.values(this.ref.current.getElementsByClassName("instrument"));
