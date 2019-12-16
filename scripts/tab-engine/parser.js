@@ -164,7 +164,8 @@ Parser.Chunk = class {
         }).reduce((accum, beat) => {
           if (beat[1] === 0)
             accum[beat[0]] = [];
-          accum[beat[0]][beat[1]] = beat[2];
+          if (beat[2])
+            accum[beat[0]][beat[1]] = beat[2];
           return accum;
         }, {}));
     }

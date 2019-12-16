@@ -4,26 +4,47 @@
     <title>{{ page.song_title }} &bull; Marcus Whybrow</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description" content="{{ page.song_title }}{% if page.song_author %} by {{ page.song_author }}{% endif %}.">
-    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
 
     <style>
       #notation {
         display: none;
       }
-      #render {
-        border-bottom: 10px solid black;
+      #render .piece {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
       }
       #render .bar {
-        display: inline-block;
+        flex-grow: 1;
         border-left: 1px solid rgb(202, 202, 202);
-        margin: 10px 0;
+        margin: 30px 0;
+        display: flex;
       }
-      #render .bar:last-child {
+      #render .gap {
+        flex-grow: 1000000000;
+      }
+      #render .bar:not(:last-of-type).bar-last-in-row {
+        border-right: 1px solid rgb(202, 202, 202);
+      }
+      #render .bar.bar-last-in-row[data-next-bar-type="double"] {
         position: relative;
         border-right: 1px solid rgb(202, 202, 202);
       }
-      #render .bar:last-child:after {
+      #render .bar.bar-last-in-row[data-next-bar-type="double"]:after {
+        content: " ";
+        position: absolute;
+        z-index: -1;
+        top: -0;
+        right: 2px;
+        width: 1px;
+        bottom: 0;
+        background-color: rgb(180, 180, 180);
+      }
+      /* #render .bar:last-of-type {
+        position: relative;
+        border-right: 1px solid rgb(202, 202, 202);
+      }
+      #render .bar:last-of-type:after {
         content: " ";
         position: absolute;
         z-index: -1;
@@ -32,13 +53,13 @@
         width: 2px;
         bottom: 0;
         background-color: rgb(180, 180, 180);
-      }
+      } */
       #render .bar.bar-double {
         position: relative;
         border-left: 1px solid rgb(180, 180, 180);
         /* background-color: rgb(230, 230, 230); */
       }
-      #render .bar.bar-double:after {
+      #render .bar.bar-double:before {
         content: " ";
         position: absolute;
         z-index: -1;
@@ -49,6 +70,7 @@
         background-color: rgb(180, 180, 180);
       }
       #render .bar .beat {
+        flex-grow: 1;
         display: inline-block;
         vertical-align: top;
       }
@@ -58,11 +80,13 @@
       #render .bar .beat:first-child .voice {
         padding-left: 5px;
       }
-      
-
       #render .bar .beat .instrument {
         padding: 5px 0;
         margin: 10px 0;
+      }
+      #render .bar .beat .instrument.instrument-hide {
+        display: none;
+        /* background-color: red; */
       }
       #render .instrument.instrument-single-voice {
         font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
@@ -76,9 +100,6 @@
       }
       #render .bar .beat .instrument:last-child {
         margin-bottom: 0;
-      }
-      #render .bar .beat .instrument:nth-child(odd) {
-        /* background-color: rgb(238, 238, 238);  */
       }
       #render .bar .beat .instrument .voice {
         position: relative;
@@ -109,13 +130,16 @@
       <header>
         {% assign slug = page.url | split: '/' | last | split: '.' | first %}
         <h1 class="{{ slug }}">{{ page.song_title }}</h1>
-        <a href="/chords/">back</a>
         {% if page.song_author %}<address>{{ page.song_author }}</address>{% endif %}
+        <a href="/chords/">back</a>
       </header>
 
-      <div id="render"></div>
+      <div id="render">Loading ...</div>
 <pre id="notation">{{ content }}</pre>
     </article>
   </body>
+
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
   <script type="module" src="/scripts/tab-engine/main.js"></script>
 </html>

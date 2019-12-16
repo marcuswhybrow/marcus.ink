@@ -7,6 +7,7 @@ class Instrument extends React.Component {
         className: `instrument instrument-${this.props.voiceCount > 1 ? "multi" : "single"}-voice`,
         "data-name": this.props.name,
         "data-voice-count": this.props.voiceCount,
+        "data-rest": this.props.voices.length === 0,
       },
       ...Array.apply(null, Array(this.props.voiceCount)).map((el, voiceId) =>
         React.createElement(Voice, {
