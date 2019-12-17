@@ -180,7 +180,7 @@ article
             padding-right: 10px
           .instrument
             padding: 3px 0
-            margin: 0px 0
+            margin: 0
             &.instrument-hide
               display: none
             &.instrument-single-voice
@@ -199,23 +199,21 @@ article
               &[data-instrument-name="CHORDS"]
                 padding-top: 2px
                 height: 20px
-                // background-color: rgb(240, 240, 240)
                 &:after
                   height: 0px
                   top: 11px
                   border-color: rgb(216, 216, 216)
                 span
-                  background-color: rgb(189, 189, 189)
-                  color: rgb(255, 255, 255)
+                  color: rgb(150, 150, 150)
                   font-weight: bold
                   border-radius: 3px
-                  font-size: 115%
-                  padding: 1px 4px
+                  font-size: 80%
               &[data-instrument-name="TAB"]:after
                 border-bottom: 1px solid rgb(243, 243, 243)
               position: relative
               height: 15px
-              padding-right: 5px
+              margin-right: 2px
+              // padding-right: 5px
               &:after
                 content: " "
                 position: absolute
@@ -228,7 +226,7 @@ article
                 border-bottom: 1px dashed rgb(235, 235, 235)
               span
                 background-color: white
-                padding: 0 3px
+                // padding: 0 3px
 
     .gap
       flex-grow: 1000000000

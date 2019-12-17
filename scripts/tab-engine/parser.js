@@ -158,6 +158,8 @@ Parser.Chunk = class {
     while(column = columns.shift()) {
       if(this._isBarLine(column))
         bars.push([column[0]]);
+      else if (column.every(line => !line))
+        continue;
       else
         bars[bars.length - 1].push(column.map((line, lineId) => {
           return [names[lineId][0], names[lineId][1], line.trim()];
