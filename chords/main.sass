@@ -81,7 +81,7 @@ article
       margin: 0 auto
       .section-break
         width: 100%
-        height: 40px
+        height: 30px
         &:first-child
           display: none
       .beat
@@ -91,21 +91,23 @@ article
           font-family: mrs-eaves-xl-serif, serif
           font-size: 120%
           color: rgb(26, 26, 26)
-          line-height: 1.2em
-          height: 18px
+          line-height: 1em
+          // height: 18px
           &[data-rest="true"]
             width: 0
           &[data-name="CHORDS"]
-            height: 15px
-            position: relative
-            // top: 5px
-            .voice span
-              // background-color: rgb(189, 189, 189)
-              color: rgb(125, 125, 125)
-              font-weight: bold
-              border-radius: 3px
-              font-size: 60%
-              padding: 1px 1px 1px 0
+            .voice
+              height: 8px
+              span
+                position: relative
+                vertical-align: top
+                line-height: 1em
+                height: 10px
+                color: rgb(125, 125, 125)
+                font-weight: bold
+                border-radius: 3px
+                font-size: 60%
+                padding: 1px 1px 1px 0
           .voice
             margin-right: 2px
             &.voice-mid-word
@@ -124,6 +126,8 @@ article
         border-left: 1px dashed rgb(235, 235, 235)
         margin: 20px 0
         display: flex
+        &:empty
+          width: 40px
         &.bar-first-in-row, &.bar-first-in-row:before
           border-left-color: rgb(179, 179, 179)
         &:not(:last-of-type).bar-last-in-row
