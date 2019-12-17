@@ -78,9 +78,7 @@ class Piece extends React.Component {
         ];
     }
   }
-  imperativePostProcessing(prevProps, prevState) {
-    if (this.state.renderStyle !== "bar") return;
-    if (prevState && this.state.windowWidth === prevState.windowWidth) return;
+  _barPostProcessing() {
     // Add "bar-last-in-row" class to appropriate bars
     const bars = Object.values(this.ref.current.children);
     bars.map(bar => bar.classList.remove("bar-first-in-row", "bar-last-in-row"));
@@ -108,7 +106,17 @@ class Piece extends React.Component {
       if (instruments.every(instrument => instrument.getAttribute("data-rest") === "true"))
         instruments.map(instrument => instrument.classList.add("instrument-hide"));
     })
-
+  }
+  imperativePostProcessing(prevProps, prevState) {
+    switch(this.state.renderStyle) {
+      case "bar":
+        if (prevState && prevState.renderStyle === "bar")
+          if (prevState.windowWidth !== this.state.windowWidth)
+            return this._barPostProcessing();
+        return this._barPostProcessing();
+      case "lyric":
+      default:
+    }
   }
   componentDidMount(prevProps, prevState) {
     window.addEventListener("resize", this.recheckWindowWidth);
