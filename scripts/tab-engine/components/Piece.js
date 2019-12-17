@@ -1,33 +1,86 @@
 import Parser from '../parser.js';
 import Bar from './Bar.js';
+import Beat from './Beat.js';
+
+class Selector extends React.Component {
+  render() {
+    return React.createElement(
+      "div",
+      {className:"selector"},
+      React.createElement("span", {
+        className: this.props.renderStyle === "lyric" ? "active" : null,
+        onClick: this.setStyle.bind(this, "lyric")
+      }, "Lyrics"),
+      React.createElement("span", {
+        className: this.props.renderStyle === "bar" ? "active" : null,
+        onClick: this.setStyle.bind(this, "bar")
+      }, "Bars")
+    )
+  }
+
+  setStyle(style) {
+    this.props.setStyle(style);
+  }
+}
 
 class Piece extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       windowWidth: window.innerWidth,
+      renderStyle: Cookies.get()["style"] || "lyric",
     };
     this.ref = React.createRef();
     this.recheckWindowWidth = () => {
       this.setState({ windowWidth: window.innerWidth });
     };
+    this.setStyle = (style) => {
+      Cookies.set("style", style);
+      this.setState({ renderStyle: style });
+    }
   }
   render() {
-    const parser = new Parser(this.props.notation);
     return React.createElement(
-      "div", {ref: this.ref, className: "piece"},
-      ...parser.bars.map((bar, barId, bars) => 
-        React.createElement(Bar, {
-          names: parser.names,
-          bar: bar,
-          barNumber: barId + 1,
-          nextBar: bars[barId + 1],
-        })
-      ),
-      React.createElement("div", {className: "gap"})
+      "div",
+      {ref: this.ref, className: `piece piece-${this.state.renderStyle}-style`},
+      React.createElement(Selector, {renderStyle: this.state.renderStyle, setStyle: this.setStyle}),
+      React.createElement("div", {className: "content"}, ...this._deriveChildren())
     );
   }
-  imperativePostProcessing() {
+  _deriveChildren() {
+    const parser = new Parser(this.props.notation);
+    switch (this.state.renderStyle) {
+      case "lyric":
+        return parser.bars.map((bar, barId, bars) => {
+          return (
+            bar[0] === "||"
+              ? [React.createElement("div", {className: "section-break"})]
+              : []
+          ).concat(bar.slice(1).map(beat =>
+              React.createElement(Beat, {
+                names: parser.names,
+                beat: beat,
+                renderStyle: this.state.renderStyle,
+              })
+            ));
+        }).reduce((accum, beats) => accum.concat(beats));
+      default:
+        return [parser.bars.map((bar, barId, bars) => 
+            React.createElement(Bar, {
+              names: parser.names,
+              bar: bar,
+              barNumber: barId + 1,
+              nextBar: bars[barId + 1],
+              renderStyle: this.state.renderStyle,
+            })
+          ),
+          React.createElement("div", {className: "gap"})
+        ];
+    }
+  }
+  imperativePostProcessing(prevProps, prevState) {
+    if (this.state.renderStyle !== "bar") return;
+    if (prevState && this.state.windowWidth === prevState.windowWidth) return;
     // Add "bar-last-in-row" class to appropriate bars
     const bars = Object.values(this.ref.current.children);
     bars.map(bar => bar.classList.remove("bar-first-in-row", "bar-last-in-row"));
@@ -57,12 +110,12 @@ class Piece extends React.Component {
     })
 
   }
-  componentDidMount() {
+  componentDidMount(prevProps, prevState) {
     window.addEventListener("resize", this.recheckWindowWidth);
-    this.imperativePostProcessing();
+    this.imperativePostProcessing(prevProps, prevState);
   }
-  componentDidUpdate() {
-    this.imperativePostProcessing();
+  componentDidUpdate(prevProps, prevState) {
+    this.imperativePostProcessing(prevProps, prevState);
   }
   componentWillUnmount() {
     window.removeEventListener("resize", this.recheckWindowWidth);

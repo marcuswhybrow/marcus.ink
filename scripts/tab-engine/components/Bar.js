@@ -17,7 +17,11 @@ class Bar extends React.Component {
         "data-next-bar-type": nextBarType,
       },
       ...this.props.bar.slice(1).map(beat => 
-        React.createElement(Beat, {names: this.props.names, beat: beat})
+        React.createElement(Beat, {
+          names: this.props.names,
+          beat: beat,
+          renderStyle: this.props.renderStyle,
+        })
       )
     );
   }

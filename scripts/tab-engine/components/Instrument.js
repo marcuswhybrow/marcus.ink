@@ -13,6 +13,7 @@ class Instrument extends React.Component {
         React.createElement(Voice, {
           instrumentName: this.props.name,
           instrumentVoice: voiceId + 1,
+          renderStyle: this.props.renderStyle,
         }, this.props.voices[voiceId])
       )
     )
