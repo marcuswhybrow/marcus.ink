@@ -16,14 +16,20 @@ class Bar extends React.Component {
         "data-bar-number": this.props.barNumber,
         "data-next-bar-type": nextBarType,
       },
-      ...this.props.bar.slice(1).map(beat => 
-        React.createElement(Beat, {
-          names: this.props.names,
-          beat: beat,
-          renderStyle: this.props.renderStyle,
-        })
-      )
+      ...this._deriveChildren()
     );
+  }
+  _deriveChildren() {
+    let beats = this.props.bar.slice(1);
+    if (beats.length === 0)
+      beats = [{}]; // Always at least one beat in a bar
+    return beats.map(beat => 
+      React.createElement(Beat, {
+        names: this.props.names,
+        beat: beat,
+        renderStyle: this.props.renderStyle,
+      })
+    )
   }
   _deriveBarType(input) {
     switch (input) {
