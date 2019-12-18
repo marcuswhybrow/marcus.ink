@@ -23,7 +23,10 @@ class Parser {
   }
 
   _parseText(input) {
-    const chunks = input.split(/(\n[\s\n]*\n)/);
+    let chunks = `${input}\n\n`.split(/(\n[\s\n]*\n)/);
+    if (chunks.length)
+      chunks = chunks.slice(0, chunks.length - 1);
+    console.log(chunks);
     let groups = [];
     let position = 1;
     for (let chunkId = 0; chunkId < chunks.length;) {
@@ -123,7 +126,7 @@ Parser.Chunk = class {
     // Consume names
     let columnsBuffer = [];
     while(column = columns.shift()) {
-      if(this._isBarLine(column)) break;
+      if (this._isBarLine(column)) break;
       columnsBuffer.push(column);
     }
     const nameLines = columnsBuffer.reduce((accum, col) => accum.map((text, i) => `${text} ${col[i]}`));
