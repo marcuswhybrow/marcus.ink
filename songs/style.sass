@@ -1,0 +1,167 @@
+---
+---
+html
+  -webkit-text-size-adjust: 100%
+
+body
+  padding: 0
+  margin: 0
+  font-family: mrs-eaves-xl-serif, serif
+  font-weight: 400
+  font-style: normal
+
+
+a#banner 
+  position: fixed
+  width: 120%
+  left: -10%
+  top: 0
+  right: 10%
+  text-align: center
+  background-color: white
+  z-index: 100
+  color: rgb(112, 112, 112)
+  text-transform: uppercase
+  letter-spacing: 2px
+
+  font-size: 150%
+  padding: 10px 0
+  box-shadow: 0px 0px 1px rgb(111, 131, 131)
+
+  text-decoration: none
+
+
+article 
+  position: relative
+  padding: 60px 20px 20px
+  background-color: white
+  @media only screen and (min-width: 800px) 
+    max-width: 800px
+    margin: 0 auto 0
+  header 
+    margin-top: 0px
+    /* margin-bottom: 60px */
+    font-family: trajan-sans-pro, sans-serif
+    font-style: normal
+    text-align: center
+    transition-property: margin
+    transition-duration: 0.2s
+    h1 
+      grid-column: 2/3
+      font-weight: 200
+      font-size: 200%
+      line-height: 1em
+      text-align: center
+      margin: 20px 0 0 0
+      transition: font-size 0.2s
+      grid-area: title
+      @media only screen and (min-width: 600px) 
+        font-size: 300%
+      @media only screen and (min-width: 800px) 
+        font-size: 300%
+    address 
+      grid-area: author
+      font-style: normal
+      font-size: 90%
+      text-align: center
+      color: rgb(41, 41, 41)
+      margin: 0
+    a 
+      text-decoration: none
+      color: inherit
+    #back 
+      display: none
+      background-color: rgb(209, 209, 209)
+      position: absolute
+      top: 30px
+      left: 20px
+      border-radius: 2px
+      width: 37px
+      height: 33px
+      padding-top: 5px
+      @media only screen and (min-width: 800px) 
+        top: 30px
+      &:hover
+      background-color: rgb(224, 103, 103)
+      i 
+        border: solid white
+        border-width: 0 5px 5px 0
+        display: inline-block
+        padding: 3px
+        width: 5px
+        height: 5px
+        transform: rotate(135deg)
+        -webkit-transform: rotate(135deg)
+        position: relative
+        top: 3px
+        left: 2px
+
+
+.hallelujah 
+  font-family: trajan-sans-pro, sans-serif
+  text-transform: uppercase
+  font-style: normal
+  background: -webkit-linear-gradient(90deg, rgb(216, 23, 23), rgb(73, 13, 13))
+  background-clip: text
+  -webkit-background-clip: text
+  -webkit-text-fill-color: transparent
+
+.merry-christmas-everybody 
+  font-family: "Dancing Script", cursive
+  color: rgb(206, 74, 80) !important
+
+.i-wish-it-could-be-christmas-everyday 
+  font-family: "Waiting for the Sunrise", cursive
+  letter-spacing: -2px
+  color: rgb(211, 69, 69) !important
+  background: -webkit-linear-gradient(90deg, rgb(65, 7, 7), rgb(211, 69, 69))
+  background-clip: text
+  -webkit-background-clip: text
+  -webkit-text-fill-color: transparent
+
+.christmas-time 
+  font-family: "Bowlby One SC", cursive
+  color: rgb(177, 40, 40) !important
+  background: -webkit-linear-gradient(90deg, rgb(117, 9, 9), rgb(231, 109, 109))
+  background-clip: text
+  -webkit-background-clip: text
+  -webkit-text-fill-color: transparent
+
+.hark-the-herald-angels-sing 
+  font-family: "Halant", cursive
+
+
+
+
+
+article
+  p 
+    font-size: 120%
+    color: rgb(26, 26, 26)
+    line-height: 1.2em
+    &.chorus 
+      /* font-size: 180% */
+      border-left: 2px solid rgb(231, 231, 231)
+      padding: 10px 20px
+      color: rgb(24, 24, 24)
+    &.bridge 
+      font-style: italic
+    &.mark 
+      text-align: left
+      text-transform: uppercase
+      font-style: italic
+      color: rgb(116, 116, 116)
+      padding: 10px 20px
+      border-left: 2px dashed rgb(201, 200, 200)
+      &:before
+        content: "♫ " 
+    span:not(:last-child):after 
+      content: ", "
+  .end 
+    margin: 20px auto 30px
+    /* background-color: rgb(184, 184, 184) */
+    width: 10%
+    height: 5px
+    border-radius: 2px
+    border-bottom: 2px dashed rgb(184, 184, 184)
+  
