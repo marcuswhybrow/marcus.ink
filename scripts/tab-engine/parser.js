@@ -23,10 +23,9 @@ class Parser {
   }
 
   _parseText(input) {
-    let chunks = `${input}\n\n`.split(/(\n[\s\n]*\n)/);
+    let chunks = `${input.trim()}\n\n`.split(/(\n[\s\n]*\n)/);
     if (chunks.length)
       chunks = chunks.slice(0, chunks.length - 1);
-    console.log(chunks);
     let groups = [];
     let position = 1;
     for (let chunkId = 0; chunkId < chunks.length;) {
