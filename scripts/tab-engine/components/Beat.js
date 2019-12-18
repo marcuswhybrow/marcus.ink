@@ -15,7 +15,7 @@ class Beat extends React.Component {
       renderStyle: this.props.renderStyle,
     });
     switch (this.props.renderStyle) {
-      case "lyric":        
+      case "chord":        
         return [
           ["CHORDS", this.props.names["CHORDS"]],
           ["MELODY", this.props.names["MELODY"]],

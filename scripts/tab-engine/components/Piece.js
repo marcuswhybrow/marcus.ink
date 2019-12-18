@@ -2,6 +2,17 @@ import Parser from '../parser.js';
 import Bar from './Bar.js';
 import Beat from './Beat.js';
 
+class Banner extends React.Component {
+  render() {
+    return React.createElement("div", {id: "banner"},
+      React.createElement("div", null,
+        React.createElement("a", {href: "/chords/"}, "Chords"),
+        React.createElement(Selector, {renderStyle: this.props.renderStyle, setStyle: this.props.setStyle}),
+      )
+    );
+  }
+}
+
 class Selector extends React.Component {
   render() {
     return React.createElement(
@@ -10,11 +21,15 @@ class Selector extends React.Component {
       React.createElement("span", {
         className: this.props.renderStyle === "lyric" ? "active" : null,
         onClick: this.setStyle.bind(this, "lyric")
-      }, "Lyrics"),
+      }, "L"),
+      React.createElement("span", {
+        className: this.props.renderStyle === "chord" ? "active" : null,
+        onClick: this.setStyle.bind(this, "chord")
+      }, "C"),
       React.createElement("span", {
         className: this.props.renderStyle === "bar" ? "active" : null,
         onClick: this.setStyle.bind(this, "bar")
-      }, "Bars")
+      }, "B")
     )
   }
 
@@ -43,14 +58,17 @@ class Piece extends React.Component {
     return React.createElement(
       "div",
       {ref: this.ref, className: `piece piece-${this.state.renderStyle}-style`},
-      React.createElement(Selector, {renderStyle: this.state.renderStyle, setStyle: this.setStyle}),
+      React.createElement(Banner, {renderStyle: this.state.renderStyle, setStyle: this.setStyle}),
       React.createElement("div", {className: "content"}, ...this._deriveChildren())
     );
   }
   _deriveChildren() {
+    if (this.state.renderStyle === "lyric")
+      return [React.createElement("div", {className: "lyrics", dangerouslySetInnerHTML: {__html: this.props.lyricsHTML }})];
+    console.log(this.props.lyrics);
     const parser = new Parser(this.props.notation);
     switch (this.state.renderStyle) {
-      case "lyric":
+      case "chord":
         return parser.bars.map((bar, barId, bars) => {
           return (
             bar[0] === "||"
@@ -64,9 +82,11 @@ class Piece extends React.Component {
               })
             ));
         }).reduce((accum, beats) => accum.concat(beats));
+      case "bar":
       default:
         return [parser.bars.map((bar, barId, bars) => 
             React.createElement(Bar, {
+              key: barId,
               names: parser.names,
               bar: bar,
               barNumber: barId + 1,

@@ -15,16 +15,15 @@
         {% assign slug = page.url | split: '/' | last | split: '.' | first %}
         <h1 class="{{ slug }}">{{ page.song_title }}</h1>
         {% if page.song_author %}<address>{{ page.song_author }}</address>{% endif %}
-        <a id="banner" href="/chords/">Chords</a>
       </header>
 
       <div id="render"><div id="loading">. . .</div></div>
-<pre id="notation">{{ content }}</pre>
+{{ content }}
     </article>
   </body>
 
-  <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
   <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
   <script type="module" src="/scripts/tab-engine/main.js"></script>
 </html>
