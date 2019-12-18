@@ -104,21 +104,7 @@ class Piece extends React.Component {
         ];
     }
   }
-  _barPostProcessing() {
-    // Add "bar-last-in-row" class to appropriate bars
-    const bars = Object.values(this.ref.current.children);
-    bars.map(bar => bar.classList.remove("bar-first-in-row", "bar-last-in-row"));
-    const barRows = {};
-    bars.map(bar => {
-      const verticalPos = bar.getBoundingClientRect().top;
-      barRows[verticalPos] = barRows[verticalPos] || [];
-      barRows[verticalPos].push(bar);
-    });
-    Object.values(barRows).map(bars => {
-      bars[0].classList.add("bar-first-in-row");
-      bars[bars.length - 1].classList.add("bar-last-in-row")
-    });
-
+  _hideEmptyInstrumentRows() {
     // Add "instrument-hide" class to any instruments empty for an entire row
     const instruments = Object.values(this.ref.current.getElementsByClassName("instrument"));
     instruments.map(instrument => instrument.classList.remove("instrument-hide"));
@@ -133,15 +119,37 @@ class Piece extends React.Component {
         instruments.map(instrument => instrument.classList.add("instrument-hide"));
     })
   }
+  _classifyBarsInRows() {
+    // Add "bar-last-in-row" class to appropriate bars
+    const bars = Object.values(this.ref.current.children);
+    bars.map(bar => bar.classList.remove("bar-first-in-row", "bar-last-in-row"));
+    const barRows = {};
+    bars.map(bar => {
+      const verticalPos = bar.getBoundingClientRect().top;
+      barRows[verticalPos] = barRows[verticalPos] || [];
+      barRows[verticalPos].push(bar);
+    });
+    Object.values(barRows).map(bars => {
+      bars[0].classList.add("bar-first-in-row");
+      bars[bars.length - 1].classList.add("bar-last-in-row")
+    });
+  }
+  _barPostProcessing() {
+    this._classifyBarsInRows();
+    this._hideEmptyInstrumentRows();
+  }
+  _isPostProcessingRequired(prevState, style) {
+    if (this.state.renderStyle === style) {
+      if (prevState && prevState.renderStyle === style)
+        if (prevState.windowWidth !== this.state.windowWidth)
+          return true;
+      return true;
+    }
+    return false;
+  }
   imperativePostProcessing(prevProps, prevState) {
-    switch(this.state.renderStyle) {
-      case "bar":
-        if (prevState && prevState.renderStyle === "bar")
-          if (prevState.windowWidth !== this.state.windowWidth)
-            return this._barPostProcessing();
-        return this._barPostProcessing();
-      case "lyric":
-      default:
+    if (this._isPostProcessingRequired(prevState, "bar")) {
+      this._barPostProcessing();
     }
   }
   componentDidMount(prevProps, prevState) {

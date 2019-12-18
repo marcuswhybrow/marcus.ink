@@ -118,7 +118,19 @@ Parser.Chunk = class {
   _isBarLine(column) {
     return column.every(line => line === column[0]) && column[0].match(/^\/?\|\|?$/);
   }
+  _getMelodyOverrideID(column) {
+    let overrideId = null;
+    column.map((line, lineId) => {
+      if (line.trim() === ">")
+        overrideId = lineId;
+      if (line.trim().match(/[^>]+/))
+        return null;
+    });
+    return overrideId;
+  }
+  _isMelodyLine(line) {
 
+  }
   _parseColumns(input) {
     const columns = input.slice();
     let column;
@@ -155,23 +167,47 @@ Parser.Chunk = class {
           return;
       }
     });
-    const bars = [[column[0]]];
+    const bars = [[column[0]]]; // column[0] is always chunks first barline
+    let melodyOverrideId = null;
     // Consume bars
     while(column = columns.shift()) {
+      let id = this._getMelodyOverrideID(column)
+      if (id) {
+        melodyOverrideId = id;
+        continue;
+      }
       if(this._isBarLine(column))
         bars.push([column[0]]);
       else if (column.every(line => !line))
         continue;
-      else
-        bars[bars.length - 1].push(column.map((line, lineId) => {
-          return [names[lineId][0], names[lineId][1], line.trim()];
-        }).reduce((accum, beat) => {
+      else {
+        let beats = [];
+        let beatMelody = null;
+        column.map((line, lineId) => {
+          const trimLine = line.trim();
+          if (
+            (melodyOverrideId && lineId === melodyOverrideId)
+            || (
+              trimLine
+              && !beatMelody
+              && !names[lineId][0].match(/(CHORDS|TAB)/)
+            )
+          )
+            beats.push(beatMelody = ["__MELODY__", 0, trimLine]);
+          beats.push([names[lineId][0], names[lineId][1], trimLine]);
+        });
+        if (!beatMelody)
+          beats.push(["__MELODY__", 0, ""]);
+
+        const beatsByName = beats.reduce((accum, beat) => {
           if (beat[1] === 0)
             accum[beat[0]] = [];
           if (beat[2])
             accum[beat[0]][beat[1]] = beat[2];
           return accum;
-        }, {}));
+        }, {});
+        bars[bars.length - 1].push(beatsByName);
+      }
     }
     return bars;
   }

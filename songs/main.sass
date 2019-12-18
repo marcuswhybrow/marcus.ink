@@ -134,7 +134,8 @@ article
           .instrument
             font-family: mrs-eaves-xl-serif, serif
             line-height: 1em
-            // height: 18px
+            &.instrument-hide
+              display: none
             &[data-rest="true"]
               width: 0
             &[data-name="CHORDS"]
@@ -152,6 +153,7 @@ article
                   font-size: 50%
                   padding: 1px 1px 1px 0
             .voice
+              height: 18px
               margin-right: 2px
               &.voice-mid-word
                 margin-right: 0

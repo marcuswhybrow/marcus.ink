@@ -15,10 +15,10 @@ class Beat extends React.Component {
       renderStyle: this.props.renderStyle,
     });
     switch (this.props.renderStyle) {
-      case "chord":        
+      case "chord":
         return [
           ["CHORDS", this.props.names["CHORDS"]],
-          ["MELODY", this.props.names["MELODY"]],
+          ["__MELODY__", 1],
         ].map(toElements);
       default:
         return Object.entries(this.props.names).map(toElements);
