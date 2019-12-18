@@ -6,8 +6,10 @@ class Banner extends React.Component {
   render() {
     return React.createElement("div", {id: "banner"},
       React.createElement("div", null,
-        React.createElement("a", {href: "/chords/"}, "Chords"),
-        React.createElement(Selector, {renderStyle: this.props.renderStyle, setStyle: this.props.setStyle}),
+        React.createElement("a", {href: "/songs/"}, "Songs"),
+        this.props.selector
+          ? React.createElement(Selector, {renderStyle: this.props.renderStyle, setStyle: this.props.setStyle})
+          : null,
       )
     );
   }
@@ -41,9 +43,14 @@ class Selector extends React.Component {
 class Piece extends React.Component {
   constructor(props) {
     super(props);
+    let renderStyle;
+    if (!this.props.notation)
+      renderStyle = "lyric";
+    else
+      renderStyle = Cookies.get()["style"] || "lyric";
     this.state = {
       windowWidth: window.innerWidth,
-      renderStyle: Cookies.get()["style"] || "lyric",
+      renderStyle: renderStyle,
     };
     this.ref = React.createRef();
     this.recheckWindowWidth = () => {
@@ -58,14 +65,13 @@ class Piece extends React.Component {
     return React.createElement(
       "div",
       {ref: this.ref, className: `piece piece-${this.state.renderStyle}-style`},
-      React.createElement(Banner, {renderStyle: this.state.renderStyle, setStyle: this.setStyle}),
+      React.createElement(Banner, {renderStyle: this.state.renderStyle, setStyle: this.setStyle, selector: Boolean(this.props.notation)}),
       React.createElement("div", {className: "content"}, ...this._deriveChildren())
     );
   }
   _deriveChildren() {
     if (this.state.renderStyle === "lyric")
       return [React.createElement("div", {className: "lyrics", dangerouslySetInnerHTML: {__html: this.props.lyricsHTML }})];
-    console.log(this.props.lyrics);
     const parser = new Parser(this.props.notation);
     switch (this.state.renderStyle) {
       case "chord":

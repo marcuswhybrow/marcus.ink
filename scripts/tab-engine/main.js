@@ -1,9 +1,11 @@
 import Piece from "./components/Piece.js";
 
 const t0 = performance.now();
+const notation = document.getElementById("notation");
+
 ReactDOM.render(
   React.createElement(Piece, {
-    notation: document.getElementById("notation").textContent,
+    notation: notation ? notation.textContent : null,
     lyricsHTML: document.getElementById("lyrics").innerHTML,
   }),
   document.getElementById("render")
