@@ -73,6 +73,7 @@ Parser.Chunk = class {
     this.gutters = this._deriveGutters(this.lines);
     this.columns = this._deriveColumns(this.gutters, this.lines);
     this.bars = this._parseColumns(this.columns);
+    console.log(this.columns);
   }
 
   error(msg, lineId, columnNumber) {
@@ -116,7 +117,8 @@ Parser.Chunk = class {
   }
 
   _isBarLine(column) {
-    return column.every(line => line === column[0]) && column[0].match(/^\/?\|\|?$/);
+    const trimLine = column[0].trim();
+    return column.every(line => line.trim() === trimLine) && trimLine.match(/^\/?\|\|?$/);
   }
   _getMelodyOverrideID(column) {
     let overrideId = null;
