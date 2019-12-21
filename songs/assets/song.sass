@@ -1,54 +1,8 @@
 ---
 ---
 
-html body
-  margin: 0
-  padding: 0
-  
-
-#banner
-  position: fixed
-  top: 0
-  left: 0
-  right: 0
-  border-bottom: 1px solid rgb(231, 231, 231)
-  text-align: center
-  z-index: 100
-  padding: 0 40px
-  transition: padding 0.2s
-  background-color: white
-  @media only screen and (max-width: 700px)
-    padding: 0 20px
-  &>div
-    position: relative
-    max-width: 800px
-    margin: 0 auto
-    a
-      text-transform: uppercase
-      text-decoration: none
-      color: rgb(112, 112, 112)
-      letter-spacing: 2px
-      font-family: mrs-eaves-xl-serif, serif
-      font-size: 150%
-      line-height: 1.9em
-    .selector
-      position: absolute
-      top: 18px
-      right: 0
-      $selectorGrey: rgb(200, 200, 200)
-      text-align: center
-      text-transform: uppercase
-      font-size: 60%
-      color: $selectorGrey
-      span
-        cursor: pointer
-        border-left: 1px solid $selectorGrey
-        padding: 0 5px
-        &:first-child
-          border-left: none
-        &.active, &:hover
-          $selectorGreyHover: rgb(100, 100, 100)
-          color: $selectorGreyHover
+@import "reset.sass"
+@import "banner.sass"
 
 article
   margin-top: 60px

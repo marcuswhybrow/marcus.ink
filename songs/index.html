@@ -1,4 +1,13 @@
 ---
+fonts:
+  - Mountains+of+Christmas:700
+  - Special+Elite
+  - Luckiest+Guy
+  - Oleo+Script+Swash+Caps
+  - Bangers
+  - Lobster
+  - Pacifico
+  - Carter+One
 ---
 <!doctype html>
 <html lang="en">
@@ -7,104 +16,100 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description" content="Songs">
     <link rel="stylesheet" href="https://use.typekit.net/ydk2vlq.css">
-    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Waiting+for+the+Sunrise|Bowlby+One+SC|Halant&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <style>
-      a#banner {
-        box-shadow: 0 0 1px rgb(111, 131, 131);
-      }
-      article {
-        padding-top: 60px;
-      }
-      #songs a {
-        font-size: 160%;
-        text-decoration: none;
-        color: black;
-        transition: font-size 0.2s;
-        line-height: 0.9em;
-        display: block;
-        padding: 2px 0;
-        margin: 5px 0;
-        text-align: center;
-      }
-      @media only screen and (min-width: 600px) {
-        #songs a {
-          font-size: 200%;
-        }
-      }
-      @media only screen and (min-width: 800px) { 
-        #songs a {
-          font-size: 300%;
-        }
-      }
-
-      h2 {
-        text-transform: uppercase;
-        font-weight: normal;
-        color: rgb(112, 112, 112);
-        margin: 80px 0 0;
-        text-align: center;
-      }
-    </style>
+    {% include fonts.html %}
+    <link rel="stylesheet" type="text/css" href="assets/index.css">
   </head>
   <body>
-    <a id="banner" href="./">Songs</a>
+    <div id="banner">
+      <div><a href="./">Songs</a></div>
+    </div>
 
     <article>
       <div id="songs">
-        {% include song-link.html title="Hallelujah" slug="hallelujah" %}
-        <div id="songs-christmas">
-          {% include song-link.html title="Merry Christmass Everybody" slug="merry-christmas-everybody" %}
-          {% include song-link.html title="I Wish It Could Be Christmas Everyday" slug="i-wish-it-could-be-christmas-everyday" %}
-          {% include song-link.html title="Christmas Time" slug="christmas-time" %}
-        </div>
-        <div id="hyms">
-          {% include song-link.html title="Hark! The Herald Angels Sing" slug="hark-the-herald-angels-sing" %}
-        </div>
+        <section id="christmas">
+          <header>
+            <h2>Christmas</h2>
+          </header>
+          <div class="songs">
+            {% include song-link.html title="Merry Christmass Everybody" slug="merry-christmas-everybody" %}
+            {% include song-link.html title="I Wish It Could Be Christmas Everyday" slug="i-wish-it-could-be-christmas-everyday" %}
+            {% include song-link.html title="Christmas Time" slug="christmas-time" %}
+            <!-- {% include song-link.html title="Hallelujah" slug="hallelujah" %} -->
+          </div>
+        </section>
 
-        <h2>Roy Orbison</h2>
-        {% include song-link.html title="I Drove All Night" slug="i-drove-all-night" %}
-        {% include song-link.html title="It's Over" slug="its-over" %}
-        {% include song-link.html title="Oh, Pretty Woman" slug="oh-pretty-woman" %}
-        {% include song-link.html title="You Got It" slug="you-got-it" %}
-        {% include song-link.html title="A Love So Beautiful" slug="a-love-so-beautiful" %}
+        <!-- <section id="hyms">
+          <header><h2>Hyms</h2></header>
+          <div class="songs">
+            {% include song-link.html title="Hark! The Herald Angels Sing" slug="hark-the-herald-angels-sing" %}
+          </div>
+        </section> -->
 
-        <h2>Sia</h2>
-        {% include song-link.html title="Chandelier" slug="chandelier" %}
-        {% include song-link.html title="Elastic Heart" slug="elastic-heart" %}
-        {% include song-link.html title="Titanium" slug="titanium" %}
+        <section id="roy-orbison">
+          <header><h2>Roy Orbison</h2><img src="assets/images/sections/roy-orbison-logo.png" /></header>
+          <div class="songs">
+            {% include song-link.html title="I Drove All Night" slug="i-drove-all-night" %}
+            {% include song-link.html title="It's Over" slug="its-over" %}
+            {% include song-link.html title="Oh, Pretty Woman" slug="oh-pretty-woman" %}
+            {% include song-link.html title="You Got It" slug="you-got-it" %}
+            {% include song-link.html title="A Love So Beautiful" slug="a-love-so-beautiful" %}
+          </div>
+        </section>
 
-        <h2>The Eagles</h2>
-        {% include song-link.html title="Hotel California" slug="hotel-california" %}
-        {% include song-link.html title="Take It Easy" slug="take-it-easy" %}
-        {% include song-link.html title="Lyin' Eyes" slug="lyin-eyes" %}
+        <section id="queen">
+          <header><h2>Queen</h2><img src="assets/images/sections/queen-logo-white.png" /></header>
+          <div class="songs">
+            {% include song-link.html title="Bohemian Rhapsodey" slug="bohemian-rhapsodey" %}
+            {% include song-link.html title="Don't Stop Me Now" slug="dont-stop-me-now" %}
+            {% include song-link.html title="I Want To Break Free" slug="i-want-to-break-free" %}
+            {% include song-link.html title="Love of My Life" slug="love-of-my-life" %}
+            {% include song-link.html title="Somebody To Love" slug="somebody-to-love" %}
+            {% include song-link.html title="We Are The Champions" slug="we-are-the-champions" %}
+            {% include song-link.html title="Crazy Little Thing Called Love" slug="crazy-little-thing-called-love" %}
+          </div>
+        </section>
 
-        <h2>Queen</h2>
-        {% include song-link.html title="Bohemian Rhapsodey" slug="bohemian-rhapsodey" %}
-        {% include song-link.html title="Don't Stop Me Now" slug="dont-stop-me-now" %}
-        {% include song-link.html title="I Want To Break Free" slug="i-want-to-break-free" %}
-        {% include song-link.html title="Love of My Life" slug="love-of-my-life" %}
-        {% include song-link.html title="Somebody To Love" slug="somebody-to-love" %}
-        {% include song-link.html title="We Are The Champions" slug="we-are-the-champions" %}
-        {% include song-link.html title="Crazy Little Thing Called Love" slug="crazy-little-thing-called-love" %}
+        <section id="les-miserables">
+          <header><h2>Les Misérables</h2><img src="assets/images/sections/les-miserables-logo.png" /></header>
+          <div class="songs">
+            {% include song-link.html title="Look Down" slug="look-down" %}
+            {% include song-link.html title="At The End of The Day" slug="at-the-end-of-the-day" %}
+            {% include song-link.html title="Who Am I?" slug="who-am-i" %}
+            {% include song-link.html title="Castle On A Cloud" slug="castle-on-a-cloud" %}
+            {% include song-link.html title="Master of the House" slug="master-of-the-house" %}
+            {% include song-link.html title="Stars" slug="stars" %}
+            {% include song-link.html title="The ABC Cafe" slug="the-abc-cafe" %}
+            {% include song-link.html title="Do You Hear The People Sing?" slug="do-you-hear-the-people-sing" %}
+            {% include song-link.html title="One Day More" slug="one-day-more" %}
+  
+            {% include song-link.html title="On My Own" slug="on-my-own" %}
+            {% include song-link.html title="A Little Fall of Rain" slug="a-little-fall-of-rain" %}
+            {% include song-link.html title="Bring Him Home" slug="bring-him-home" %}
+            {% include song-link.html title="Empty Chairs At Empty Tables" slug="empty-chairs-at-empty-tables" %}
+            {% include song-link.html title="Do You Hear The People Sing (Reprise)" slug="do-you-hear-the-people-sing-reprise" %}
+          </div>
+        </section>
 
-        <h2>Les Misérables</h2>
-        {% include song-link.html title="Look Down" slug="look-down" %}
-        {% include song-link.html title="At The End of The Day" slug="at-the-end-of-the-day" %}
-        {% include song-link.html title="Who Am I?" slug="who-am-i" %}
-        {% include song-link.html title="Castle On A Cloud" slug="castle-on-a-cloud" %}
-        {% include song-link.html title="Master of the House" slug="master-of-the-house" %}
-        {% include song-link.html title="Stars" slug="stars" %}
-        {% include song-link.html title="The ABC Cafe" slug="the-abc-cafe" %}
-        {% include song-link.html title="Do You Hear The People Sing?" slug="do-you-hear-the-people-sing" %}
-        {% include song-link.html title="One Day More" slug="one-day-more" %}
+        <section id="the-eagles">
+          <header><h2>The Eagles</h2><img src="assets/images/sections/the-eagles-logo.png" /></header>
+          <div class="songs">
+            {% include song-link.html title="Hotel California" slug="hotel-california" %}
+            {% include song-link.html title="Take It Easy" slug="take-it-easy" %}
+            {% include song-link.html title="Lyin' Eyes" slug="lyin-eyes" %}
+          </div>
+        </section>
 
-        {% include song-link.html title="On My Own" slug="on-my-own" %}
-        {% include song-link.html title="A Little Fall of Rain" slug="a-little-fall-of-rain" %}
-        {% include song-link.html title="Bring Him Home" slug="bring-him-home" %}
-        {% include song-link.html title="Empty Chairs At Empty Tables" slug="empty-chairs-at-empty-tables" %}
-        {% include song-link.html title="Do You Hear The People Sing (Reprise)" slug="do-you-hear-the-people-sing-reprise" %}
+        <section id="sia">
+          <header><h2>Sia</h2><img src="assets/images/sections/sia-logo.png" /></header>
+          <div class="songs">
+            {% include song-link.html title="Chandelier" slug="chandelier" %}
+            {% include song-link.html title="Elastic Heart" slug="elastic-heart" %}
+            {% include song-link.html title="Titanium" slug="titanium" %}
+          </div>
+        </section>
       </div>
     </article>
   </body>
+  <script src="assets/js/snowstorm-min.js"></script>
+  <script type="module" src="assets/js/index.js"></script>
 </html>

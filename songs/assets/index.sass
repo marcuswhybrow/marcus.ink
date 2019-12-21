@@ -1,0 +1,204 @@
+---
+---
+
+@import "reset.sass"
+@import "banner.sass"
+@import "mixins.sass"
+
+body
+  background-color: black
+
+#banner
+  display: none
+
+article
+  // padding: 45px 0 0
+  background-color: black
+  section
+    // border-bottom: 1px solid rgb(50,50,50)
+    // border-top: 40px solid black
+    // border-left: 10px solid white
+    // border-right: 10px solid white
+    &#hyms
+      background-color: white
+      .songs a
+        color: black
+    &#christmas
+      position: relative
+      background: url("images/sections/christmas.jpg") repeat
+      overflow: hidden
+      padding: 130px 0 55px
+      h2
+        display: block
+        font-family: "Mountains of Christmas", cursive
+        font-size: 250%
+        letter-spacing: 8px
+        color: white
+        text-align: center
+        text-shadow: 0 0 5px #ffffff80
+        width: 300px
+        margin: 0 auto 80px
+      .songs
+        padding-right: 15
+        a
+          background-color: transparent
+          position: relative
+          color: white
+          font-family: "Dancing Script", cursive
+          font-size: 150%
+          margin: 0 20px 20px 20px
+          padding: 0
+          flex-grow: 1
+          color: rgba(255,255,255,0.9)
+          vertical-align: top
+          text-align: center
+          &:hover
+            color: white
+          &.i-wish-it-could-be-christmas-everyday
+            font-family: "Special Elite", cursive
+            width: 250px
+          &.merry-christmas-everybody
+            // top: -5px
+            font-family: "Luckiest Guy", cursive
+            width: 230px
+          &.christmas-time
+            font-family: "Oleo Script Swash Caps", cursive
+            width: 110px
+            font-size: 170%
+            line-height: 1em
+            text-align: center
+    &#roy-orbison
+      padding: 20px 0
+      background: url("images/sections/roy-orbison-v3.jpg") no-repeat
+      background-position: top center
+      background-size: cover
+      min-height: 300px
+      header img
+        width: 270px
+        display: block
+        margin: 20px auto
+        @include prefix((filter: drop-shadow(0 0 10px black)), webkit)
+      .songs a
+        color: black
+    &#sia
+      padding: 20px 0
+      background: url("images/sections/sia-v2.jpg") no-repeat
+      background-position: top center
+      background-size: cover
+      min-height: 300px
+      header
+        img
+          display: block
+          margin: 20px auto 20px
+          width: 150px
+          @include prefix((filter: drop-shadow(0 0 5px white)), webkit)
+    &#the-eagles
+      padding: 20px 0
+      background: url("images/sections/the-eagles-v2.jpg") no-repeat
+      background-position: top center
+      background-size: cover
+      min-height: 300px
+      header
+        img
+          display: block
+          margin: 20px auto
+          width: 240px
+          @include prefix((filter: drop-shadow(0 0 5px white)), webkit)
+    &#les-miserables
+      padding: 20px 0
+      background: url("images/sections/les-miserables-v5.jpg") no-repeat
+      background-position: top center
+      background-size: cover
+      min-height: 300px
+      header
+        img
+          display: block
+          margin: 20px auto
+          width: 300px
+          transition: width 0.2s
+          @include prefix((filter: drop-shadow(0px 1px 3px rgba(0,0,0,0.9))), webkit)
+          @media only screen and (max-width: 400px)
+            width: 250px
+      .songs
+        padding: 0 18px 0 20px
+        @include prefix((backdrop-filter: blur(2px)), webkit)
+        a
+          color: #4e4e4e
+          margin: 0
+          text-align: left
+          font-size: 120%
+          background-color: #ffffff42
+          @include prefix((backdrop-filter: blur(10px)), webkit)
+          padding: 2px 4px
+          margin: 0 2px 2px 0
+          font-family: sans-serif
+    &#queen
+      padding: 20px 0
+      background: url("images/sections/queen-v2.jpg") no-repeat
+      background-position: center
+      background-size: cover
+      min-height: 300px
+      header
+        h2
+          display: none
+        img
+          display: block
+          width: 250px
+          margin: 0 auto 20px
+          @include prefix((filter: drop-shadow(0 0 5px #ffffff)), webkit)
+      .songs
+        a
+          margin: 0 20px 40px 20px
+          font-family: "Special Elite", cursive
+          text-align: center
+          &.bohemian-rhapsodey
+            font-family: "Special Elite", cursive
+            width: 150px
+          &.dont-stop-me-now
+            font-family: "Luckiest Guy", cursive
+            width: 120px
+          &.crazy-little-thing-called-love
+            font-family: "Bangers", cursive
+            width: 150px
+          &.i-want-to-break-free
+            font-family: "Pacifico", cursive
+            width: 150px
+            line-height: 1.2em
+          &.somebody-to-love
+            font-family: "Oleo Script Swash Caps", cursive
+            width: 100px
+            font-size: 180%
+            line-height: 1em
+          &.we-are-the-champions
+            font-family: "Carter One", cursive
+            line-height: 1em
+            width: 150px
+          &.love-of-my-life
+            font-family: "Lobster", cursive
+            width: 90px
+      
+
+    header
+      display: block
+      padding: 0 20px
+      h2
+        display: none
+        text-transform: uppercase
+        font-weight: normal
+        color: rgb(112, 112, 112)
+        margin: 0 0 20px
+        text-align: center
+        width: 100%
+    .songs
+      max-width: 600px
+      margin: 0 auto
+      display: flex
+      flex-direction: row
+      flex-wrap: wrap
+      a
+        flex-grow: 1
+        font-size: 150%
+        text-decoration: none
+        color: white
+        text-align: center
+        margin: 0 20px 20px 20px
