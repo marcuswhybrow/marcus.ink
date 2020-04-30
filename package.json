@@ -66,9 +66,13 @@
     ]
   },
   "dependencies": {
+    "@mdx-js/loader": "^1.6.0",
+    "@next/mdx": "^9.3.6",
     "next": "^9.3.6",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "remark-emoji": "^2.1.0",
+    "remark-images": "^2.0.0"
   },
   "devDependencies": {
     "@types/node": "^13.13.4",
