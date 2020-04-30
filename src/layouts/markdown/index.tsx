@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import path from 'path'
+import Link from 'next/link'
 
 export type FrontMatter = Partial<{
   __resourcePath: string
@@ -52,7 +53,10 @@ export default (frontMatter: FrontMatter): React.FC => {
           />
         </Head>
         <p>
-          &larr; <a href="/">marcus.ink</a>
+          &larr;{' '}
+          <Link href="/">
+            <a>marcus.ink</a>
+          </Link>
         </p>
         <article>
           <h1 dangerouslySetInnerHTML={{ __html: pageTitle }} />

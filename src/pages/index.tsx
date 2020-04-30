@@ -1,9 +1,13 @@
+import Link from 'next/link'
+
 export const Index: React.FC = () => (
   <>
     <h1>marcus.ink</h1>
     <ul>
       <li>
-        <a href="/start-close-in">Start Close In</a>
+        <Link href="/start-close-in">
+          <a>Start Close In</a>
+        </Link>
       </li>
     </ul>
   </>
