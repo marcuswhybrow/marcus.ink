@@ -1,7 +1,0 @@
-title: Marcus Whybrow
-url: "https://marcus.ink"
-
-exclude: ["CNAME", "README.md"]
-
-sass:
-  sass_dir: _sass
