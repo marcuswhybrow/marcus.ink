@@ -5,7 +5,7 @@ export const Index: React.FC = () => (
     <h1>marcus.ink</h1>
     <ul>
       <li>
-        <Link href="/start-close-in">
+        <Link href="/[article]" as="/start-close-in">
           <a>Start Close In</a>
         </Link>
       </li>
