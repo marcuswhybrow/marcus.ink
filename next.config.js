@@ -13,12 +13,14 @@ module.exports = require('@next/mdx')({
 })({
   // Next.js config
   webpack: (config) => {
-    const setAlias = (str) =>
-      (config.resolve.alias[`@${str}`] = path.resolve(__dirname, str))
+    const setAlias = (str, target) =>
+      (config.resolve.alias[`@${str}`] = path.resolve(__dirname, target || str))
     
     setAlias('articles')
     setAlias('components')
     setAlias('pages')
+    setAlias('lib')
+    setAlias('layouts', 'components/layouts')
     
     return config
   }

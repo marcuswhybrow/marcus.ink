@@ -46,6 +46,21 @@
       "git add"
     ]
   },
+  "babel": {
+    "presets": [
+      "next/babel"
+    ],
+    "plugins": [
+      [
+        "styled-components",
+        {
+          "ssr": true,
+          "displayName": true,
+          "preprocess": false
+        }
+      ]
+    ]
+  },
   "dependencies": {
     "@mdx-js/loader": "^1.6.0",
     "@next/mdx": "^9.3.6",
@@ -58,15 +73,18 @@
     "remark-emoji": "^2.1.0",
     "remark-external-links": "^6.0.0",
     "remark-footnotes": "^1.0.0",
-    "remark-images": "^2.0.0"
+    "remark-images": "^2.0.0",
+    "styled-components": "^5.1.0"
   },
   "devDependencies": {
     "@types/node": "^13.13.4",
     "@types/react": "^16.9.34",
     "@types/react-dom": "^16.9.7",
+    "@types/styled-components": "^5.1.0",
     "@typescript-eslint/eslint-plugin": "^2.30.0",
     "@typescript-eslint/parser": "^2.30.0",
     "babel-plugin-module-resolver": "^4.0.0",
+    "babel-plugin-styled-components": "^1.10.7",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-mdx": "^1.6.9",

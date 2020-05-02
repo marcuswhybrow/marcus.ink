@@ -2,8 +2,21 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
-import { getArticles, getArticleFromSlug } from '../lib/articles/ssr'
-import { getArticleFromMdx } from '../lib/articles/runtime'
+import { getArticles, getArticleFromSlug } from '@lib/articles/ssr'
+import { getArticleFromMdx } from '@lib/articles/runtime'
+import DefaultLayout from '@layouts/default'
+import styled from 'styled-components'
+
+const Back = styled.a`
+  text-decoration: none;
+  cursor: pointer;
+  font-family: 'Courier New', Courier, monospace;
+  text-transform: capitalize;
+
+  &:hover {
+    color: lightgreen;
+  }
+`
 
 export type ArticleProps = {
   relPath: string
@@ -12,21 +25,15 @@ export type ArticleProps = {
 export const Article: React.FC<ArticleProps> = ({ relPath }: ArticleProps) => {
   const { Body, title, description } = getArticleFromMdx(relPath)
   return (
-    <>
-      <Head>
-        <title>{title.head} | Marcus Whybrow</title>
-        <meta name="description" content={description} />
-        <meta name="robots" content="index, follow" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      </Head>
+    <DefaultLayout title={title.head} description={description}>
       <Link href="/">
-        <a>marcus.ink</a>
+        <Back>&larr; articles</Back>
       </Link>
       <article>
         <h1 dangerouslySetInnerHTML={{ __html: title.display }} />
         <Body />
       </article>
-    </>
+    </DefaultLayout>
   )
 }
 

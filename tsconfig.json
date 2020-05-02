@@ -17,8 +17,10 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": ["./components/*"],
+      "@layouts/*": ["./components/layouts/*"],
       "@articles/*": ["./articles/*"],
-      "@pages/*": ["./pages/*"]
+      "@pages/*": ["./pages/*"],
+      "@lib/*": ["./lib/*"]
     }
   }
 }
