@@ -9,6 +9,8 @@
   "private": true,
   "scripts": {
     "dev": "next",
+    "article": "./scripts/article.sh",
+    "dream": "./scripts/article.sh dreams",
     "lint": "tsc --noEmit && eslint '*/**/*.{js,ts,tsx,mdx}' --quiet --fix",
     "build": "next build && next export"
   },
