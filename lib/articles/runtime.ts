@@ -6,10 +6,24 @@ const dateStrFromFileName = (fileName: string): string =>
   `20${fileName.slice(0, 2)}-${fileName.slice(2, 4)}-${fileName.slice(4, 6)}`
 
 export const getArticleFromMdx = (relPath: string): Article => {
-  const {
-    default: Body,
-    meta: { title, description, created, updated },
-  } = require(`@articles/${relPath}`)
+  const article = require(`@articles/${relPath}`)
+  const Body = article.default
+
+  const exports = (keys: string): void => {
+    let result = article
+    try {
+      for (const key of keys.split('.')) result = result[key]
+    } catch (err) {
+      throw new Error(`Must export "${keys}" in ${relPath}`)
+    }
+    if (!result) throw new Error(`"${keys}" cannot be undefined in ${relPath}`)
+  }
+
+  exports('meta')
+  exports('meta.title')
+  exports('meta.description')
+
+  const { title, description, created, updated } = article.meta
 
   const fileName = path.basename(relPath, '.mdx')
   const slug = fileName.replace(/^\d{6}-/, '')
