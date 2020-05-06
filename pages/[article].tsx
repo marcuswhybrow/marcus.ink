@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import { GetStaticPaths, GetStaticProps } from 'next'
-import Head from 'next/head'
 import Link from 'next/link'
 import { getArticles, getArticleFromSlug } from '@lib/articles/ssr'
 import { getArticleFromMdx } from '@lib/articles/runtime'
