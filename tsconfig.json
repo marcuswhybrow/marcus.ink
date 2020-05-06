@@ -20,7 +20,8 @@
       "@layouts/*": ["./components/layouts/*"],
       "@articles/*": ["./articles/*"],
       "@pages/*": ["./pages/*"],
-      "@lib/*": ["./lib/*"]
+      "@lib/*": ["./lib/*"],
+      "@data/*": ["./data/*"]
     }
   }
 }

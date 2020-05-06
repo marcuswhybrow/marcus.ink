@@ -4,8 +4,6 @@ const path = require('path')
 module.exports = require('@next/mdx')({
   options: {
     remarkPlugins: [
-      require('remark-images'),
-      require('remark-emoji'),
       require('remark-footnotes'),
       require('remark-external-links'),
     ]
@@ -20,6 +18,7 @@ module.exports = require('@next/mdx')({
     setAlias('components')
     setAlias('pages')
     setAlias('lib')
+    setAlias('data')
     setAlias('layouts', 'components/layouts')
     
     return config
