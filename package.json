@@ -64,12 +64,10 @@
     ]
   },
   "dependencies": {
-    "@mdx-js/loader": "^1.6.0",
+    "@mdx-js/loader": "^1.6.1",
     "@next/mdx": "^9.3.6",
     "glob": "^7.1.6",
     "next": "^9.3.6",
-    "next-mdx-enhanced": "^2.5.0",
-    "next-mdx-frontmatter": "^0.0.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "remark-external-links": "^6.0.0",
