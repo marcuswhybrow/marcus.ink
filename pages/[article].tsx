@@ -9,6 +9,13 @@ const HeroImage = styled.img`
   width: 100%;
 `
 
+const Title = styled.h1`
+  text-align: center;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 250%;
+  font-weight: normal;
+`
+
 export type ArticleProps = {
   relPath: string
 }
@@ -23,7 +30,9 @@ export const Article: React.FC<ArticleProps> = ({ relPath }: ArticleProps) => {
         </div>
       )}
       <article>
-        {!image && <h1 dangerouslySetInnerHTML={{ __html: title.display }} />}
+        {!image && (
+          <Title dangerouslySetInnerHTML={{ __html: title.display }} />
+        )}
         <Body />
       </article>
     </DefaultLayout>
