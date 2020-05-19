@@ -13,7 +13,12 @@ const ArticleRoot = styled.article`
   line-height: 1.5em;
   color: rgba(0, 0, 0, 0.8);
   font-size: 110%;
-  margin: 0 20px;
+  margin: 0 10px;
+
+  @media screen and (max-width: 699px) {
+    font-size: 100%;
+    line-height: 1.2em;
+  }
 `
 
 const Title = styled.h1`
@@ -22,7 +27,15 @@ const Title = styled.h1`
   font-size: 250%;
   font-weight: normal;
   line-height: 1.5em;
-  margin: 0 40px;
+
+  transition: all 0.2s ease-in-out;
+
+  @media screen and (max-width: 699px) {
+    font-size: 150%;
+    line-height: 1.3em;
+    text-align: left;
+    margin: 0;
+  }
 `
 
 export type ArticleProps = {
