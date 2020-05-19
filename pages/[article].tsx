@@ -29,14 +29,16 @@ export const Article: React.FC<ArticleProps> = ({ relPath }: ArticleProps) => {
   const { Body, title, description, image } = getArticleFromMdx(relPath)
   return (
     <DefaultLayout title={title.head} description={description} image={image}>
-      <div>
-        <HeroImage src={image} />
-      </div>
+      {image && (
+        <div>
+          <HeroImage src={image} />
+        </div>
+      )}
       <Link href="/">
         <Back>&larr; articles</Back>
       </Link>
       <article>
-        <h1 dangerouslySetInnerHTML={{ __html: title.display }} />
+        {!image && <h1 dangerouslySetInnerHTML={{ __html: title.display }} />}
         <Body />
       </article>
     </DefaultLayout>
