@@ -8,6 +8,11 @@ const Root = styled.div`
   left: 0;
   right: 0;
   text-align: center;
+
+  @media screen and (max-height: 499px) {
+    top: 10px;
+  }
+
   a {
     display: inline-block;
     width: 80px;
@@ -24,6 +29,13 @@ const Root = styled.div`
     text-transform: lowercase;
     overflow: hidden;
     line-height: 1em;
+
+    @media screen and (max-height: 499px) {
+      width: 50px;
+      height: 50px;
+      font-size: 240%;
+    }
+
     span {
       position: relative;
       left: 0px;
