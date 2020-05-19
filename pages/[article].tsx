@@ -9,11 +9,20 @@ const HeroImage = styled.img`
   width: 100%;
 `
 
+const ArticleRoot = styled.article`
+  line-height: 1.5em;
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 110%;
+  margin: 0 20px;
+`
+
 const Title = styled.h1`
   text-align: center;
   color: rgba(0, 0, 0, 0.5);
   font-size: 250%;
   font-weight: normal;
+  line-height: 1.5em;
+  margin: 0 40px;
 `
 
 export type ArticleProps = {
@@ -29,12 +38,12 @@ export const Article: React.FC<ArticleProps> = ({ relPath }: ArticleProps) => {
           <HeroImage src={image} />
         </div>
       )}
-      <article>
+      <ArticleRoot>
         {!image && (
           <Title dangerouslySetInnerHTML={{ __html: title.display }} />
         )}
         <Body />
-      </article>
+      </ArticleRoot>
     </DefaultLayout>
   )
 }

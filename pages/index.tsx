@@ -58,11 +58,13 @@ export const Index: React.FC<IndexProps> = ({
   articles,
 }: IndexProps) => (
   <DefaultLayout title="Articles" description="Articles by Marcus Whybrow">
-    <Link href="/[article]" as={`/${latestArticle.slug}`}>
-      <HeroImage>
-        <img src={latestArticle.image} />
-      </HeroImage>
-    </Link>
+    {!latestArticle.image && (
+      <Link href="/[article]" as={`/${latestArticle.slug}`}>
+        <HeroImage>
+          <img src={latestArticle.image} />
+        </HeroImage>
+      </Link>
+    )}
 
     <Articles>
       <LatestArticle>
@@ -88,7 +90,7 @@ export const getStaticProps: GetStaticProps = async () => {
       latestArticle: {
         title: latestArticle.title.display,
         slug: latestArticle._slug,
-        image: latestArticle.image,
+        image: latestArticle.image || null,
       },
       articles: articles.map(({ _slug, title }) => ({
         slug: _slug,
