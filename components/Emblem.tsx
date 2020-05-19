@@ -2,6 +2,7 @@ import Link from 'next/link'
 import styled from 'styled-components'
 
 const Root = styled.div`
+  z-index: 10000;
   position: fixed;
   top: 35px;
   left: 0;
