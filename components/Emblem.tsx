@@ -3,17 +3,10 @@ import styled from 'styled-components'
 
 const Root = styled.div`
   position: fixed;
-  top: 0;
+  top: 35px;
   left: 0;
   right: 0;
-`
-
-const Wrapper = styled.div`
-  width: 1040px;
-  padding: 30px 30px;
-  margin: 0 auto;
-  text-align: left;
-
+  text-align: center;
   a {
     display: inline-block;
     width: 80px;
@@ -21,9 +14,9 @@ const Wrapper = styled.div`
     border-radius: 80px;
     background-color: rgba(245, 245, 245, 0.4);
     backdrop-filter: blur(5px);
-    border: 1px solid rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.025);
     text-decoration: none;
-    color: rgba(0, 0, 0, 0.08);
+    color: rgba(0, 0, 0, 0.06);
     text-align: center;
     font-size: 400%;
     font-weight: lighter;
@@ -38,21 +31,18 @@ const Wrapper = styled.div`
 
     transition: all 0.2s ease-in-out;
     &:hover {
-      color: rgba(0, 0, 0, 0.15);
-      border-color: rgba(0, 0, 0, 0.1);
+      color: rgba(0, 0, 0, 0.5);
+      border-color: rgba(0, 0, 0, 0.5);
     }
-  }
 `
 
 export const BackToArticles: React.FC = () => (
   <Root>
-    <Wrapper>
-      <Link href="/">
-        <a>
-          <span>M</span>
-        </a>
-      </Link>
-    </Wrapper>
+    <Link href="/">
+      <a>
+        <span>M</span>
+      </a>
+    </Link>
   </Root>
 )
 
