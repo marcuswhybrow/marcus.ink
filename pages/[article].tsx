@@ -27,6 +27,7 @@ const Title = styled.h1`
   font-size: 250%;
   font-weight: normal;
   line-height: 1.5em;
+  margin: 0;
 
   transition: all 0.2s ease-in-out;
 
@@ -34,7 +35,6 @@ const Title = styled.h1`
     font-size: 150%;
     line-height: 1.3em;
     text-align: left;
-    margin: 0;
   }
 `
 

@@ -15,6 +15,10 @@ const Root = styled.div`
   display: flex;
   flex-direction: column;
 
+  @media screen and (max-height: 499px) {
+    margin: 80px auto 80px;
+  }
+
   .footnotes {
     font-size: 80%;
     color: #777;
