@@ -58,7 +58,7 @@ export const Index: React.FC<IndexProps> = ({
   articles,
 }: IndexProps) => (
   <DefaultLayout title="Articles" description="Articles by Marcus Whybrow">
-    {!latestArticle.image && (
+    {!!latestArticle.image && (
       <Link href="/[article]" as={`/${latestArticle.slug}`}>
         <HeroImage>
           <img src={latestArticle.image} />
