@@ -1,9 +1,16 @@
-import styled from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 import Head from 'next/head'
+import Emblem from '@components/Emblem'
+
+const GlobalStyle = createGlobalStyle`
+  html {
+    overflow-y: scroll;
+  }
+`
 
 const Root = styled.div`
   max-width: 800px;
-  margin: 100px auto;
+  margin: 130px auto 100px;
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: column;
@@ -36,6 +43,7 @@ export const Default: React.FC<DefaultProps> = ({
   children,
 }: DefaultProps) => (
   <Root>
+    <GlobalStyle />
     <Head>
       <title>{title} | Marcus Whybrow</title>
       <meta name="description" content={description} />
@@ -46,6 +54,7 @@ export const Default: React.FC<DefaultProps> = ({
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />
     </Head>
+    <Emblem />
     {children}
   </Root>
 )

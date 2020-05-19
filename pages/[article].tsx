@@ -1,21 +1,9 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import { GetStaticPaths, GetStaticProps } from 'next'
-import Link from 'next/link'
 import { getArticles, getArticleFromSlug } from '@lib/articles/ssr'
 import { getArticleFromMdx } from '@lib/articles/runtime'
 import DefaultLayout from '@layouts/default'
 import styled from 'styled-components'
-
-const Back = styled.a`
-  text-decoration: none;
-  cursor: pointer;
-  font-family: 'Courier New', Courier, monospace;
-  text-transform: capitalize;
-
-  &:hover {
-    color: lightgreen;
-  }
-`
 
 const HeroImage = styled.img`
   width: 100%;
@@ -34,9 +22,6 @@ export const Article: React.FC<ArticleProps> = ({ relPath }: ArticleProps) => {
           <HeroImage src={image} />
         </div>
       )}
-      <Link href="/">
-        <Back>&larr; articles</Back>
-      </Link>
       <article>
         {!image && <h1 dangerouslySetInnerHTML={{ __html: title.display }} />}
         <Body />
