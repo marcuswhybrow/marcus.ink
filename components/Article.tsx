@@ -10,18 +10,6 @@ const ArticleRoot = styled.article`
   color: rgba(0, 0, 0, 0.8);
   font-size: 100%;
 
-  a {
-    text-decoration: none;
-    color: rgba(0, 0, 0, 0.5);
-
-    &:hover {
-      h1,
-      h2 {
-        color: limegreen;
-      }
-    }
-  }
-
   @media screen and (max-width: 700px), screen and (max-height: 499px) {
     font-size: 100%;
     line-height: 1.4em;
@@ -31,6 +19,16 @@ const ArticleRoot = styled.article`
 const ArticleLink = styled.a`
   display: block;
   cursor: pointer;
+
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.5);
+
+  &:hover {
+    h1,
+    h2 {
+      color: limegreen;
+    }
+  }
 
   img {
     display: block;
@@ -71,10 +69,32 @@ const ArticleBody = styled.div`
     margin: 0;
   }
 
+  a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.8);
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.3);
+
+    &:hover {
+      color: rgba(0, 0, 0, 1);
+      border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .prose {
+    margin: 1.6em;
+    /* line-height: 1.4em; */
+    font-size: 100%;
+    p {
+      text-indent: 0;
+      margin-bottom: 1.6em;
+    }
+  }
+
   .footnotes {
     font-size: 80%;
     color: #777;
     margin-top: 40px;
+    line-height: 1.5em;
 
     hr {
       display: none;

@@ -6,6 +6,7 @@ module.exports = require('@next/mdx')({
     remarkPlugins: [
       require('remark-footnotes'),
       require('remark-external-links'),
+      require('remark-containers'),
     ]
   }
 })({
