@@ -8,10 +8,7 @@ const Root = styled.div`
   left: 0;
   right: 0;
   text-align: center;
-
-  @media screen and (max-height: 499px) {
-    top: 10px;
-  }
+  font-family: Arial, Helvetica, sans-serif;
 
   a {
     display: inline-block;
@@ -25,36 +22,31 @@ const Root = styled.div`
     color: rgba(0, 0, 0, 0.06);
     text-align: center;
     font-size: 400%;
-    font-weight: lighter;
     text-transform: lowercase;
     overflow: hidden;
     line-height: 1em;
-
-    @media screen and (max-height: 499px) {
-      width: 50px;
-      height: 50px;
-      font-size: 240%;
-    }
-
-    span {
-      position: relative;
-      left: 0px;
-      top: 3px;
-    }
 
     transition: all 0.2s ease-in-out;
     &:hover {
       color: rgba(0, 0, 0, 0.5);
       border-color: rgba(0, 0, 0, 0.5);
     }
+  }
+
+  @media screen and (max-width: 700px), screen and (max-height: 499px) {
+    top: 10px;
+    a {
+      width: 50px;
+      height: 50px;
+      font-size: 240%;
+    }
+  }
 `
 
 export const BackToArticles: React.FC = () => (
   <Root>
     <Link href="/">
-      <a>
-        <span>M</span>
-      </a>
+      <a>M</a>
     </Link>
   </Root>
 )
