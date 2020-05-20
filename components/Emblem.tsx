@@ -5,10 +5,13 @@ const Root = styled.div`
   z-index: 10000;
   position: fixed;
   top: 35px;
-  left: 0;
-  right: 0;
+  left: 50%;
+  width: 82px;
+  height: 82px;
+  margin-left: -41px;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
+  border-radius: 80px;
 
   @keyframes swash {
     0% {
