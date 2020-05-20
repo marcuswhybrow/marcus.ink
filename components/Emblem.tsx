@@ -10,16 +10,47 @@ const Root = styled.div`
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
 
+  @keyframes swash {
+    0% {
+      background-color: rgba(245, 245, 245, 0.4);
+    }
+    10% {
+      background-color: rgba(225, 245, 245, 0.4);
+    }
+    20% {
+      background-color: rgba(225, 225, 245, 0.4);
+    }
+    30% {
+      background-color: rgba(245, 225, 225, 0.4);
+    }
+    40% {
+      background-color: rgba(245, 225, 225, 0.4);
+    }
+    50% {
+      background-color: rgba(245, 245, 225, 0.4);
+    }
+    60% {
+      background-color: rgba(225, 245, 225, 0.4);
+    }
+    70% {
+      background-color: rgba(225, 245, 245, 0.4);
+    }
+    80% {
+      background-color: rgba(245, 245, 245, 0.4);
+    }
+  }
+
   a {
+    animation: swash 600s infinite;
+
     display: inline-block;
     width: 80px;
     height: 80px;
     border-radius: 80px;
     background-color: rgba(245, 245, 245, 0.4);
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(0, 0, 0, 0.025);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 0, 0, 0.5);
     text-decoration: none;
-    color: rgba(0, 0, 0, 0.06);
     text-align: center;
     font-size: 400%;
     text-transform: lowercase;
@@ -27,9 +58,13 @@ const Root = styled.div`
     line-height: 1em;
 
     transition: all 0.2s ease-in-out;
+
+    color: rgba(0, 0, 0, 0.5);
+    border-color: rgba(0, 0, 0, 0.5);
+
     &:hover {
-      color: rgba(0, 0, 0, 0.5);
-      border-color: rgba(0, 0, 0, 0.5);
+      color: rgba(0, 0, 0, 0.8);
+      border-color: rgba(0, 0, 0, 0.8);
     }
   }
 
