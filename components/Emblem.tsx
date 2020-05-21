@@ -72,7 +72,7 @@ const Root = styled.div`
   }
 
   @media screen and (max-width: 700px), screen and (max-height: 499px) {
-    top: 10px;
+    top: 15px;
     a {
       width: 50px;
       height: 50px;
