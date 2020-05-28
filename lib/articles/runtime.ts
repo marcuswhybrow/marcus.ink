@@ -33,7 +33,7 @@ export const getArticleFromMdx = (relPath: string): Article => {
 
   const [headTitle, displayTitle] = ((): [string, string] => {
     if (typeof title === 'string') return [title, title]
-    return [title.head, title.page]
+    return [title.head, title.display]
   })()
 
   return {
