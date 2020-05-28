@@ -80,7 +80,7 @@ const ArticleBody = styled.div`
     }
   }
 
-  .prose {
+  .poetry {
     margin: 1.6em;
     /* line-height: 1.4em; */
     font-size: 100%;
