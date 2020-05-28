@@ -2,6 +2,7 @@ import Link from 'next/link'
 import styled from 'styled-components'
 
 const ArticleRoot = styled.article`
+  width: 700px;
   max-width: 700px;
   margin: 0 auto;
   font-family: Arial, Helvetica, sans-serif;
@@ -11,6 +12,7 @@ const ArticleRoot = styled.article`
   font-size: 100%;
 
   @media screen and (max-width: 700px), screen and (max-height: 499px) {
+    width: 100%;
     font-size: 100%;
     line-height: 1.4em;
   }
