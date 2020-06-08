@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 const BookRoot = styled.div`
   display: inline-block;
-  margin: 10px;
+  margin: 40px 10px;
   position: relative;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
   &:hover {
@@ -19,9 +19,9 @@ const BookRoot = styled.div`
   &:hover .avatars {
     display: none;
   }
-  opacity: 0.2;
-  transform: scale(0.5);
-  filter: grayscale(0.9);
+  opacity: 0.5;
+  transform: scale(0.8);
+  filter: grayscale(1);
   transition: opacity 1s;
 
   &.read {
