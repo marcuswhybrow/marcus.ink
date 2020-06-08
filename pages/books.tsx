@@ -18,6 +18,10 @@ const BooksRoot = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+  @media only screen and (max-width: 700px) {
+    justify-content: center;
+    margin: 0 20px;
+  }
 `
 const TextField = styled.input`
   box-sizing: border-box;
@@ -39,6 +43,9 @@ const TextField = styled.input`
 `
 const FlexTail = styled.div`
   flex-grow: 99999;
+  @media only screen and (max-width: 700px) {
+    flex-grow: 0;
+  }
 `
 
 const Books: React.FC = () => {

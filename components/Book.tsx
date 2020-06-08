@@ -5,6 +5,11 @@ import styled from 'styled-components'
 const BookRoot = styled.div`
   display: inline-block;
   margin: 40px 10px;
+
+  @media only screen and (max-width: 700px) {
+    margin: 5px;
+  }
+
   position: relative;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
   &:hover {
