@@ -20,16 +20,21 @@ const BooksRoot = styled.div`
   justify-content: space-between;
 `
 const TextField = styled.input`
+  box-sizing: border-box;
+  width: 100%;
   margin: 20px 0 40px;
   padding: 10px 20px;
   font-size: 400%;
-  width: 100%;
   border: none;
   background-color: rgb(254, 100, 50);
 
   color: white;
   &::placeholder {
     color: white;
+  }
+
+  @media only screen and (max-width: 700px) {
+    font-size: 200%;
   }
 `
 const FlexTail = styled.div`

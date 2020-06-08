@@ -19,15 +19,21 @@ const BookRoot = styled.div`
   &:hover .avatars {
     display: none;
   }
+  opacity: 0.2;
+  transform: scale(0.5);
+  filter: grayscale(0.9);
+  transition: opacity 1s;
 
   &.read {
-    opacity: 0.2;
-    filter: grayscale(0.9);
-    transform: scale(0.5);
-  }
-  &.read:hover {
     opacity: 1;
     filter: grayscale(0);
+    transform: scale(1);
+  }
+
+  &:hover {
+    opacity: 1;
+    filter: grayscale(0);
+    transform: scale(1);
   }
 
   @keyframes hover {
@@ -36,6 +42,9 @@ const BookRoot = styled.div`
     }
     50% {
       transform: scale(2) translateY(-2px);
+    }
+    100% {
+      transform: scale(2);
     }
   }
 `
