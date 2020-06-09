@@ -9,6 +9,7 @@ export type Article = {
   }
   description: string
   created: number
+  dreamt?: number
   updated?: number
 }
 

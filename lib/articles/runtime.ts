@@ -23,7 +23,7 @@ export const getArticleFromMdx = (relPath: string): Article => {
   exports('meta.title')
   exports('meta.description')
 
-  const { title, description, created, updated, image } = article.meta
+  const { title, description, created, dreamt, updated, image } = article.meta
 
   const fileName = path.basename(relPath, '.mdx')
   const slug = fileName.replace(/^\d{6}-/, '')
@@ -47,6 +47,7 @@ export const getArticleFromMdx = (relPath: string): Article => {
     },
     description,
     created: Date.parse(created || dateStrFromFileName(fileName)),
+    dreamt: Date.parse(dreamt),
     updated: Date.parse(updated),
   }
 }

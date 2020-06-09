@@ -21,4 +21,8 @@ export const getArticles = (): Article[] =>
       acc[article._slug] = article
       return acc
     }, {} as Record<string, Article>)
-  ).sort((a, b) => b.created - a.created) // Newer first
+  ).sort((a, b) => {
+    const aDate = a.dreamt || a.created
+    const bDate = b.dreamt || b.created
+    return bDate - aDate // Newer first
+  })
