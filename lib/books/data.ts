@@ -11,7 +11,14 @@ export const personData: { [key: string]: Person } = {
     fullName: 'Elon Musk',
     avatar: 'https://www.gstatic.com/tv/thumb/persons/487130/487130_v9_ba.jpg',
   },
+  iainMcGilchrist: {
+    fullName: 'Iain McGilchrist',
+    avatar:
+      'https://upload.wikimedia.org/wikipedia/commons/d/d6/Iain_McGilchrist.png',
+  },
 }
+
+const { jordanPeterson, elonMusk, iainMcGilchrist } = personData
 
 export const bookData: Book[] = [
   {
@@ -20,7 +27,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B00CPU9NN8',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'The Will to Power',
@@ -28,7 +35,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B01J4WF9PU',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'Twilight of Idols and Anti-Christ',
@@ -36,7 +43,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B002RI945U',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'The Joyous Science',
@@ -44,7 +51,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B07D1FFF5W',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'The Charterhouse of Parma',
@@ -52,7 +59,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/0140449663',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'The Red and the Black',
@@ -60,7 +67,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/0140447644',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'Wuthering Heights',
@@ -68,7 +75,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B002RI97IO',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'Anna Karenina',
@@ -76,7 +83,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B01FIWFE0K',
     read: 1,
     own: 1,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'War and Peace',
@@ -84,7 +91,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/1857150961',
     read: 1,
     own: 1,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'Demons',
@@ -92,7 +99,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/1857151828',
     read: 1,
     own: 1,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'The Idiot',
@@ -100,7 +107,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/0375413928',
     read: 1,
     own: 1,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'The Karamazov Brothers',
@@ -108,7 +115,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/0199536376',
     read: 1,
     own: 1,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'Flowers for Algernon',
@@ -116,7 +123,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/1857989384',
     read: 1,
     own: 1,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'Lord of the Flies',
@@ -124,7 +131,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B007KOHV2Y',
     read: 1,
     own: 1,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'The Stone Angel',
@@ -132,7 +139,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B01CGID56Y',
     read: 1,
     own: 1,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'The Grapes of Wrath',
@@ -140,7 +147,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B002RI9X8S',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: "One Flew Over the Cuckoo's Nest",
@@ -148,7 +155,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B005IP513I',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'I, Claudius',
@@ -156,7 +163,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B002RI9HR0',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'Down and Out in Paris and London',
@@ -164,7 +171,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B002RI9IT2',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'Nineteen Eighty-Four',
@@ -172,7 +179,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/1857151348',
     read: 1,
     own: 1,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'Homage to Catalonia',
@@ -180,7 +187,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B002RI9XHO',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'The Road to Wigan Pier',
@@ -188,7 +195,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B002RI9M48',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'East of Eden',
@@ -196,7 +203,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B002RI9K5Y',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'A Farewell to Arms',
@@ -204,7 +211,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B00FU7VBBA',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'For Whom the Bell Tolls',
@@ -212,7 +219,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B00FU7VCQE',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'Cancer Ward',
@@ -220,7 +227,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B005TKD918',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'The Gulag Archipelago',
@@ -228,7 +235,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B07JCWJ8TC',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'The First Circle',
@@ -236,7 +243,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B00667J1HE',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'The Big Sleep',
@@ -244,7 +251,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/0241956285',
     read: 1,
     own: 1,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'The Long Good-bye',
@@ -252,7 +259,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B002RI9FU4',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'The Maltese Falcon',
@@ -260,7 +267,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B00N20V112',
     read: 1,
     own: 1,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'Island',
@@ -268,7 +275,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B0031RS72C',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'Point Counter Point',
@@ -276,7 +283,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B0031RSBTQ',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'The Fratricides',
@@ -284,7 +291,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/0571105068',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'Zorba the Greek',
@@ -292,7 +299,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/0571241700',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'Fear and Loathing in Las Vegas',
@@ -300,7 +307,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B00NKY0TNG',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'Sometimes a Great Notion',
@@ -308,7 +315,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/0140045295',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'The Electric Kool Aid Acid Test',
@@ -316,7 +323,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/0552993662',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'The Horses Mouth',
@@ -324,7 +331,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B01NBOQ7V4',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'The House of God',
@@ -332,7 +339,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B0031RSATC',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'The Master and Margarita',
@@ -340,7 +347,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B07FM5KQPS',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'To Kill a Mockingbird',
@@ -348,7 +355,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B00K1XOV5G',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'Tolstoy',
@@ -356,7 +363,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/0802137687',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'Zen and the Art of Motorcycle Maintenance',
@@ -364,7 +371,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B0063HC7EQ',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'A Confession and Other Religious Writings',
@@ -372,7 +379,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B002RI9MSO',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'Paradise Lost',
@@ -380,7 +387,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B002XHNNGQ',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'Explaining Postmodernism',
@@ -388,7 +395,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B005D53DG0',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'The Discovery of the Unconscious',
@@ -396,7 +403,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/0465016731',
     read: 1,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'Genius',
@@ -404,7 +411,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/0521485088',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'An Outline of Psychoanalysis',
@@ -412,7 +419,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B002RI9Y3C',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'Interpreting Dreams',
@@ -420,7 +427,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B002RI98AG',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'Answer to Job',
@@ -428,7 +435,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B00FDR4T1G',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'Modern Man in Search of a Soul',
@@ -436,7 +443,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B00R6BGMJO',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'Symbols of Transformation',
@@ -444,7 +451,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B00QRZE8VY',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'Two Essays on Analytical Psychology',
@@ -452,7 +459,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B00R6BIEWM',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'The Archetypes and the Collective Unconscious',
@@ -460,7 +467,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B00R6BIDG4',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'Aion',
@@ -469,7 +476,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B00R6BIF1W',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'Psychology and Religion',
@@ -478,7 +485,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B00R6BIE4U',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'Psychology and Alchemy',
@@ -486,7 +493,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B00R6BIDKA',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'Mysterium Coniunctionis',
@@ -494,7 +501,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B00QRZED3M',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'The Symbolic Life',
@@ -503,7 +510,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B00R6BIDK0',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'Existence',
@@ -512,7 +519,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/1568212712',
     read: 1,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'The Origins and History of Consciousness',
@@ -520,7 +527,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B019P2PSDM',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'The Great Mother',
@@ -528,7 +535,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B00RKMZZSI',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'Play, Dreams and Imitation in Childhood',
@@ -536,7 +543,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B00DSLYG0S',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'The Moral Judgment of the Child',
@@ -544,7 +551,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B00GHJEATU',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'On Becoming a Person',
@@ -552,7 +559,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B005DKRFLO',
     read: 1,
     own: 1,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'A Way of Being',
@@ -560,7 +567,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B00BS03VCU',
     read: 1,
     own: 1,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'Human Cognitive Abilities',
@@ -569,7 +576,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/0521387124',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'The Myth of Mental Illness',
@@ -578,7 +585,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B004V54ENO',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'The Great Escape',
@@ -587,7 +594,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B00CXTMWKM',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'Enlightenment Now',
@@ -596,7 +603,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B075ZGBY6Q',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'The Rational Optimist',
@@ -605,7 +612,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B003ODI67E',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'Factfulness',
@@ -615,7 +622,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B0769XK7D6',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'Earth in Human Hands',
@@ -624,7 +631,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/1455589128',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'Mephistopheles',
@@ -633,7 +640,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/0801497183',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'A History of Religious Ideas, Volume 1',
@@ -642,7 +649,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B00IGQI7OQ',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'A History of Religious Ideas, Volume 2',
@@ -651,7 +658,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B00KMQC2ZI',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'A History of Religious Ideas, Volume 3',
@@ -660,7 +667,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B00KLX5J7U',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'Myth and Reality',
@@ -668,7 +675,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B00H7G5IQG',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'Myths, Dreams and Mysteries',
@@ -677,7 +684,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/0061319430',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'Shamanism',
@@ -686,7 +693,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/0691119422',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'The Forge and the Crucible',
@@ -695,7 +702,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/0226203905',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'The Sacred and the Profane',
@@ -704,7 +711,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B00SJ7LTC4',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'The Great Code',
@@ -713,7 +720,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/0156027801',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'Words with Power',
@@ -722,7 +729,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/0156983656',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'The Crisis of Islam',
@@ -731,7 +738,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/0753817527',
     read: 0,
     own: 1,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'The World’s Religions',
@@ -739,7 +746,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B004I43MPE',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'The Bible',
@@ -749,7 +756,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B010EWIA9Q',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'Little Science, Big Science',
@@ -757,7 +764,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/0231085621',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'The Mystery of Capital',
@@ -766,7 +773,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B004FV4XTE',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'The Systems Bible',
@@ -776,7 +783,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B00AK1BIDM',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'The Rise of Statistical Thinking 1820-1900',
@@ -784,7 +791,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/069102409X',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'Stalin',
@@ -794,7 +801,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/0385479549',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'The Rise and Fall of the Third Reich',
@@ -802,7 +809,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B01IA89O2I',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'Shake Hands With The Devil',
@@ -811,7 +818,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B0034FJGEY',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'The Rape Of Nanking',
@@ -820,7 +827,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B06XC5SBSP',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: "Hitler's Table Talk",
@@ -828,7 +835,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/1684186153',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'PANZRAM',
@@ -837,7 +844,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/1878923145',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'The Ecological Approach to Visual Perception',
@@ -845,7 +852,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B00PWAKE2M',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'The New Executive Brain',
@@ -854,7 +861,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B003D5DK0G',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'The Neuropsychology of Anxiety',
@@ -863,7 +870,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/0198522711',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'The Emotional Brain',
@@ -871,7 +878,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/0753806703',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'Affective Neuroscience',
@@ -880,7 +887,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B00590X4HM',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'Awakenings',
@@ -888,7 +895,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B00569FP8M',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'An Anthropologist on Mars',
@@ -896,7 +903,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B00569FOT2',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'Brain Architecture',
@@ -905,7 +912,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/019537858X',
     read: 0,
     own: 0,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'Zero to One',
@@ -914,7 +921,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B00KHX0II4',
     read: 0,
     own: 0,
-    recommenders: [personData.elonMusk],
+    recommenders: [elonMusk],
   },
   {
     title: 'Einstein',
@@ -923,7 +930,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B002RI9NQU',
     read: 0,
     own: 0,
-    recommenders: [personData.elonMusk],
+    recommenders: [elonMusk],
   },
   {
     title: 'Benjamin Franklin',
@@ -932,7 +939,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B003YFJ3ZQ',
     read: 0,
     own: 0,
-    recommenders: [personData.elonMusk],
+    recommenders: [elonMusk],
   },
   {
     title: 'Structures',
@@ -941,7 +948,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B002XHNNHU',
     read: 0,
     own: 0,
-    recommenders: [personData.elonMusk],
+    recommenders: [elonMusk],
   },
   {
     title: 'How to Spend $75 Billion to Make the World a Better Place',
@@ -949,7 +956,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B00DGY4D78',
     read: 1,
     own: 1,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'Progress',
@@ -958,7 +965,7 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B07ZWGL32W',
     read: 1,
     own: 1,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
   },
   {
     title: 'The Man Who Mistook His Wife For A Hat',
@@ -966,6 +973,38 @@ export const bookData: Book[] = [
     link: 'https://smile.amazon.co.uk/dp/B00M4406DQ',
     read: 1,
     own: 1,
-    recommenders: [personData.jordanPeterson],
+    recommenders: [jordanPeterson],
+  },
+  {
+    title: 'Tao: The Watercourse Way',
+    author: 'Alan Watts',
+    link: 'https://smile.amazon.co.uk/dp/1788164466',
+    read: 0,
+    own: 0,
+    recommenders: [iainMcGilchrist],
+  },
+  {
+    title: 'The God of the Left Hemisphere',
+    author: 'Roderick Tweedy',
+    link: 'https://smile.amazon.co.uk/dp/1780491018',
+    read: 0,
+    own: 0,
+    recommenders: [iainMcGilchrist],
+  },
+  {
+    title: 'Key Writings',
+    author: 'Henri Bergson',
+    link: 'https://smile.amazon.co.uk/dp/1472528018',
+    read: 0,
+    own: 0,
+    recommenders: [iainMcGilchrist],
+  },
+  {
+    title: 'The Principles of Psychology',
+    author: 'William James',
+    link: 'https://smile.amazon.co.uk/dp/1543183182',
+    read: 0,
+    own: 0,
+    recommenders: [iainMcGilchrist],
   },
 ]
