@@ -16,9 +16,14 @@ export const personData: { [key: string]: Person } = {
     avatar:
       'https://upload.wikimedia.org/wikipedia/commons/d/d6/Iain_McGilchrist.png',
   },
+  marcusWhybrow: {
+    fullName: 'Marcus Whybrow',
+    avatar:
+      'https://avatars2.githubusercontent.com/u/278456?s=460&u=cc5e038e9b5d73a3498306c58aa96d05ebb7696f&v=4',
+  },
 }
 
-const { jordanPeterson, elonMusk, iainMcGilchrist } = personData
+const { jordanPeterson, elonMusk, iainMcGilchrist, marcusWhybrow } = personData
 
 export const bookData: Book[] = [
   {
@@ -1006,5 +1011,14 @@ export const bookData: Book[] = [
     read: 0,
     own: 0,
     recommenders: [iainMcGilchrist],
+  },
+  {
+    title: 'The Magic of Handwriting',
+    author: 'Pedro Corrêa do Lago',
+    link:
+      'https://www.taschen.com/pages/en/catalogue/classics/all/07701/facts.the_magic_of_handwriting_the_correa_do_lago_collection.htm',
+    read: 0,
+    own: 0,
+    recommenders: [marcusWhybrow],
   },
 ]
