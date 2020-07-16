@@ -821,8 +821,8 @@ export const bookData: Book[] = [
     subtitle: 'The Failure of Humanity in Rwanda',
     author: 'Lt. Gen. Romeo Dallaire',
     link: 'https://smile.amazon.co.uk/dp/B0034FJGEY',
-    read: 0,
-    own: 0,
+    read: 1,
+    own: 1,
     recommenders: [jordanPeterson],
   },
   {
