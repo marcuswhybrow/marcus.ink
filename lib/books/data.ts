@@ -446,8 +446,8 @@ export const bookData: Book[] = [
     title: 'Modern Man in Search of a Soul',
     author: 'C.G. Jung',
     link: 'https://smile.amazon.co.uk/dp/B00R6BGMJO',
-    read: 0,
-    own: 0,
+    read: 1,
+    own: 1,
     recommenders: [jordanPeterson],
   },
   {
