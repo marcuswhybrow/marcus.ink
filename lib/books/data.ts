@@ -214,8 +214,8 @@ export const bookData: Book[] = [
     title: 'A Farewell to Arms',
     author: 'Ernest Hemingway',
     link: 'https://smile.amazon.co.uk/dp/B00FU7VBBA',
-    read: 0,
-    own: 0,
+    read: 1,
+    own: 1,
     recommenders: [jordanPeterson],
   },
   {
