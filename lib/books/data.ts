@@ -150,8 +150,8 @@ export const bookData: Book[] = [
     title: 'The Grapes of Wrath',
     author: 'John Steinbeck',
     link: 'https://smile.amazon.co.uk/dp/B002RI9X8S',
-    read: 0,
-    own: 0,
+    read: 1,
+    own: 1,
     recommenders: [jordanPeterson],
   },
   {
