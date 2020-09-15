@@ -174,8 +174,8 @@ export const bookData: Book[] = [
     title: 'Down and Out in Paris and London',
     author: 'George Orwell',
     link: 'https://smile.amazon.co.uk/dp/B002RI9IT2',
-    read: 0,
-    own: 0,
+    read: 1,
+    own: 1,
     recommenders: [jordanPeterson],
   },
   {
