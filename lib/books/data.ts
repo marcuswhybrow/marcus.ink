@@ -1021,4 +1021,12 @@ export const bookData: Book[] = [
     own: 0,
     recommenders: [marcusWhybrow],
   },
+  {
+    title: 'Bowling Alone',
+    author: 'Robert Putnam',
+    link: 'https://smile.amazon.co.uk/dp/0743203046',
+    read: 0,
+    own: 0,
+    recommenders: [iainMcGilchrist],
+  },
 ]
