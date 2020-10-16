@@ -62,8 +62,8 @@ export const bookData: Book[] = [
     title: 'The Charterhouse of Parma',
     author: 'Henri Stendhal',
     link: 'https://smile.amazon.co.uk/dp/0140449663',
-    read: 0,
-    own: 0,
+    read: 1,
+    own: 1,
     recommenders: [jordanPeterson],
   },
   {
