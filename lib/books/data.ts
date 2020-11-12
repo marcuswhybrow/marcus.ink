@@ -243,11 +243,11 @@ export const bookData: Book[] = [
     recommenders: [jordanPeterson],
   },
   {
-    title: 'The First Circle',
+    title: 'In The First Circle',
     author: 'Aleksandr Solzhenitsyn',
     link: 'https://smile.amazon.co.uk/dp/B00667J1HE',
-    read: 0,
-    own: 0,
+    read: 1,
+    own: 1,
     recommenders: [jordanPeterson],
   },
   {
