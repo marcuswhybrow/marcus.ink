@@ -67,11 +67,11 @@ export const bookData: Book[] = [
     recommenders: [jordanPeterson],
   },
   {
-    title: 'The Red and the Black',
+    title: 'Scarlet and Black',
     author: 'Henri Stendhal',
-    link: 'https://smile.amazon.co.uk/dp/0140447644',
-    read: 0,
-    own: 0,
+    link: 'https://smile.amazon.co.uk/dp/1857150384',
+    read: 1,
+    own: 1,
     recommenders: [jordanPeterson],
   },
   {
