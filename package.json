@@ -67,7 +67,7 @@
     "@mdx-js/loader": "^1.6.1",
     "@next/mdx": "^9.3.6",
     "glob": "^7.1.6",
-    "next": "^9.3.6",
+    "next": "^11.1.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "remark-containers": "^1.1.2",
